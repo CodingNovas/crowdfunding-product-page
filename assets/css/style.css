@@ -92,10 +92,24 @@ color: var(--Darkgray)
 .backers-progress{
 display: flex;
 flex-direction: row;
+flex-wrap: wrap;
 }
-.progress-item{
-width: 32%;
+
+.border{
+    border-left: 1px solid var(--Darkgray);
+    border-right: 1px solid var(--Darkgray);
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+.digit{
+    font-weight:700;
+    color: var(--Black);
+    font-size: 130%;
+    padding-bottom: 8px;
 }
 .progress-bar{
-width: 100%;
+    padding-top: 25px;
+    width: 100%;
 }
