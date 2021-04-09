@@ -28,6 +28,9 @@ color: var(--Darkgray);
 background-color: var(--Offwhite);
 }
 
+header{
+    margin-bottom: 150px;
+}
 /* ------------- [headers] ------------ */
 
 h1, h2, h3{
@@ -36,7 +39,7 @@ color: var(--Black);
 
 /* ------------- [buttons] ------------ */
 .btn{
-padding: 15px 35px;
+padding: 12px 35px;
 border: none;
 border-radius: 35px;
 color: white;
@@ -46,8 +49,19 @@ position: relative;
 .bg-green{
 background-color: var(--cyan);
 }
-.btn:hover{
+.bg-gray{
+background-color: var(--Darkgray);
+}
+.bg-green:hover, .bg-green:active{
 background-color: var(--Darkcyan);
+}
+
+.btn-bookmark{
+    color: var(--Darkgray)
+}
+
+.btn-bookmark:hover, .btn-bookmark:active{
+    color: var(--Darkcyan);
 }
 
 /* ------------- [section] ------------ */
@@ -55,25 +69,35 @@ background-color: var(--Darkcyan);
 section{
 margin: auto;
 background-color: white;
-width: 70%;
+min-width: 636px;
+width: 65%;
 max-width: 740px;
 box-shadow: 0px 0px 1px hsl(0deg 0% 48% / 26%);
 border-radius: 5px;
-padding: 25px;
+padding: 35px;
 margin-bottom: 15px;
 }
 
 /* ------------- [section project intro] ------------ */
 
+.project-intro{
+    position: relative;
+}
+.visual-absolute{
+    position: absolute;
+    top: -30px;;
+    left: 50%;
+}
 .project-intro h1, .project-intro p{
 text-align: center;
 margin: 15px;
 }
+
 .flex-intro{
 display: flex;
 flex-wrap: nowrap;
 justify-content: space-between;
-padding: 15px 0px;
+padding-top: 15px;
 }
 
 .bookmark{
@@ -82,9 +106,12 @@ top: 0;
 left: 0;
 height: 100%;
 }
+.btn-bookmark:hover .bookmark, .btn-bookmark:active{
+    filter: brightness(2.45) sepia(0.3) hue-rotate(126deg) saturate(4);
+}
+
 .bookmark-text{
 padding-left: 25px;
-color: var(--Darkgray)
 }
 
 /* ------------- [Progress] ------------ */
@@ -96,12 +123,12 @@ flex-wrap: wrap;
 }
 
 .border{
-    border-left: 1px solid var(--Darkgray);
-    border-right: 1px solid var(--Darkgray);
-    margin-left: 25px;
-    margin-right: 25px;
-    padding-right: 25px;
-    padding-left: 25px;
+    border-left: 2px solid hsl(0deg 0% 48% / 50%);
+    border-right: 2px solid hsl(0deg 0% 48% / 50%);
+    margin-left: 35px;
+    margin-right: 35px;
+    padding-right: 35px;
+    padding-left: 35px;
 }
 .digit{
     font-weight:700;
@@ -113,3 +140,32 @@ flex-wrap: wrap;
     padding-top: 25px;
     width: 100%;
 }
+
+/* ------------- [ Project ] ------------ */
+
+.about-this-project p, .about-this-project h2{
+    padding-bottom: 35px;
+}
+.pledge-green{
+    color: var(--cyan);
+    font-weight: 500;
+    font-size: 80%;
+}
+.about-this-project p{
+    width: 100%;
+}
+.pledge-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-shadow: 0px 0px 1px hsl(0deg 0% 48%);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.stock-text{
+    vertical-align: text-top;
+    font-size: 80%;
+}
+
