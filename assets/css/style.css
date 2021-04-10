@@ -15,7 +15,8 @@
 
 *{
     padding: 0;
-    margin:0;
+    margin: 0;
+    outline: 0;
     box-sizing: border-box;
 }
 
@@ -176,6 +177,123 @@ section{
 .stock-text{
     vertical-align: text-top;
     font-size: 80%;
+}
+
+/* --------------- [ Modal ] -------------- */
+
+.modal {
+    display: grid;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--Black);
+    border-radius: 5px;
+    background-color: var(--Offwhite);
+    z-index: 2;
+    width: 80%;
+    max-width: 740px;
+    height: 100vh;
+    grid: repeat(2, auto) 40px / 5% 90% 5%;
+    grid-template-areas: 
+    ". header ."
+    ". body   ."
+    ". .      ."
+    ;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--Black);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-header {
+    grid-area: header;
+    padding-top: 20px;
+    display: grid;
+    grid: 20% 40% 40% / 99% 1%;
+    grid-template-areas: 
+    "..... close"
+    "title ....."
+    "parag ....."
+    ;
+}
+
+.modal-header h2 {
+    grid-area: title;
+    padding-bottom: 40px;
+}
+
+.modal-header p {
+    grid-area: parag;
+}
+
+.modal-header .close-btn {
+    grid-area: close;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--Darkgray);
+}
+
+.modal-body {
+    grid-area: body;
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 20px;
+}
+
+.pledge-card {
+    cursor: pointer;
+    border: 1px solid var(--Darkgray);
+    border-radius: 5px;
+    display: grid;
+    row-gap: 10px;
+    grid: repeat(3, 50px) / 5% 80% 10% 5%;
+    height: 120px;
+    overflow: hidden;
+    grid-template-areas: 
+    ". title quantity ."
+    ". info  info     ."
+    ". bid   bid      ."
+    ;
+}
+
+.pledge-card .title {
+    grid-area: title;
+    padding-top: 20px;
+}
+
+.pledge-card .quantity {
+    grid-area: quantity;
+    padding-top: 20px;
+}
+
+.pledge-card .title span {
+    color: var(--cyan);
+    padding-left: 20px;
+}
+
+.pledge-card .info {
+    grid-area: info;
+    padding-bottom: 30px;
+}
+
+.pledge-card .bid {
+    grid-area: bid;
+}
+
+.unavailable {
+    opacity: 0.5;
 }
 
 /* ------------- [ MEDIA QUERIES - MOBILE ] ------------ */
