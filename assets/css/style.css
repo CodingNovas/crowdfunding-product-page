@@ -188,12 +188,17 @@ flex-wrap: wrap;
     .bookmark-text{
         display: none;
     }
+    .backers-progress{
+        justify-content: center;
+    }
     .progress-item{
         width: 100%;
         text-align: center;
     }
     .border{
+        width: fit-content;
         border: none;
+        padding: 0;
         margin: 0;
         border-top: 2px solid hsl(0deg 0% 48% / 50%);
         border-bottom: 2px solid hsl(0deg 0% 48% / 50%);
