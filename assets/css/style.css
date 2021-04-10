@@ -190,7 +190,9 @@ section{
     border: 1px solid var(--Black);
     border-radius: 5px;
     background-color: var(--Offwhite);
-    z-index: 2;
+    /*z-index: 2;*/
+    z-index: -1;
+    opacity: 0;
     width: 80%;
     max-width: 740px;
     height: 100vh;
