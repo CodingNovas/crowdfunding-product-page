@@ -104,8 +104,8 @@
         </div>
         <div class="bid">
           <label for="any-bid">Enter your pledge</label>
-          <input type="text" id="any-bid" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$0">
-          <button type="submit">Continue</button>
+          <input type="text" id="any-bid" data-type="currency" min="0" placeholder="$0" required>
+          <button class="continue" type="submit">Continue</button>
         </div>
       </div>
       <div class="pledge-card">
@@ -121,8 +121,8 @@
         </div>
         <div class="bid">
           <label for="bamboo-bid">Enter your pledge</label>
-          <input type="text" id="bamboo-bid" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$25">
-          <button type="submit">Continue</button>
+          <input type="text" id="bamboo-bid" data-type="currency" min="25" placeholder="$25" required>
+          <button class="continue" type="submit">Continue</button>
         </div>
       </div>
       <div class="pledge-card">
@@ -130,7 +130,7 @@
           <strong>Black Edition Stand<span>Pledge $75 or more</span></strong>
         </div>
         <div class="quantity">
-          <strong>64</strong><span> left</span>
+          <strong>64</strong><span>left</span>
         </div>
         <div class="info">
           You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
@@ -138,8 +138,8 @@
         </div>
         <div class="bid">
           <label for="black-edition-bid">Enter your pledge</label>
-          <input type="text" id="black-edition-bid" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$75">
-          <button type="submit">Continue</button>
+          <input type="text" id="black-edition-bid" min="75"placeholder="$75" required>
+          <button class="continue" type="submit">Continue</button>
         </div>
       </div>
       <div class="pledge-card unavailable">
