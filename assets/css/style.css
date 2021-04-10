@@ -86,7 +86,7 @@ margin-bottom: 15px;
 .visual-absolute{
     position: absolute;
     top: -30px;;
-    left: 50%;
+    left: 45%;
 }
 .project-intro h1, .project-intro p{
 text-align: center;
@@ -133,7 +133,7 @@ flex-wrap: wrap;
 .digit{
     font-weight:700;
     color: var(--Black);
-    font-size: 130%;
+    font-size: 170%;
     padding-bottom: 8px;
 }
 .progress-bar{
@@ -169,3 +169,52 @@ flex-wrap: wrap;
     font-size: 80%;
 }
 
+/* ------------- [ MEDIA QUERIES - MOBILE ] ------------ */
+
+@media only screen and (max-width: 576px) {
+    section{
+        min-width: 90%;
+        width: 90%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .flex-intro{
+        justify-content: space-around;
+    }
+    
+    .btn-bookmark{
+        padding: 10px;
+    }
+    .bookmark-text{
+        display: none;
+    }
+    .progress-item{
+        width: 100%;
+        text-align: center;
+    }
+    .border{
+        border: none;
+        margin: 0;
+        border-top: 2px solid hsl(0deg 0% 48% / 50%);
+        border-bottom: 2px solid hsl(0deg 0% 48% / 50%);
+        margin-top: 35px;
+        margin-bottom: 35px;
+        padding-top: 35px;
+        padding-bottom: 35px;
+        
+    }
+    .pledge-container{
+        display: block;
+        
+    }
+    .pledge-green{
+        padding-top: 15px;
+        font-size: 100%;
+    }
+    .pledge-container p{
+        padding-top: 25px;
+    }
+    .stock-info{
+        padding-bottom: 25px;
+    }
+  }
