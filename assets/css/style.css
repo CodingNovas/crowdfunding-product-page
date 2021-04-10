@@ -181,12 +181,13 @@ section{
 
 /* --------------- [ Modal ] -------------- */
 
-.modal {
+#modal {
     display: grid;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.25s ease-in-out;
     border: 1px solid var(--Black);
     border-radius: 5px;
     background-color: var(--Offwhite);
@@ -195,13 +196,23 @@ section{
     opacity: 0;
     width: 80%;
     max-width: 740px;
-    height: 100vh;
-    grid: repeat(2, auto) 40px / 5% 90% 5%;
+    height: auto;
+    overflow: hidden;
+    grid: repeat(2, auto) 20px / 5% 90% 5%;
     grid-template-areas: 
     ". header ."
     ". body   ."
-    ". .      ."
+    ". ....   ."
     ;
+}
+
+#modal.active {
+    animation: openModal 0.25s forwards ease-in-out;
+}
+
+@keyframes openModal {
+    0% {transform: translate(-50%, -50%) scale(0);}
+    100% {transform: translate(-50%, -50%) scale(1);}
 }
 
 #overlay {
@@ -213,6 +224,17 @@ section{
     background-color: var(--Black);
     opacity: 0;
     pointer-events: none;
+    transition: 0.25s ease-in-out;
+}
+
+#overlay.active {
+    pointer-events: all;
+    animation: overlay 0.25s forwards ease-in-out;
+}
+
+@keyframes overlay {
+    0% {opacity: 0;}
+    100% {opacity: 0.5;}
 }
 
 .modal-header {
@@ -236,7 +258,7 @@ section{
     grid-area: parag;
 }
 
-.modal-header .close-btn {
+#close-btn {
     grid-area: close;
     cursor: pointer;
     border: none;
