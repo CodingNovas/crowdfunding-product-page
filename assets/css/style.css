@@ -62,7 +62,7 @@ h1, h2, h3{
     color: var(--Darkgray);
 }
 
-.active{
+.active-bookmark{
     color: #292626;
     filter: brightness(2.45) sepia(0.3) hue-rotate(126deg) saturate(4);
 }

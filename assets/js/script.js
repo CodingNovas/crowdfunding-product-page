@@ -27,7 +27,7 @@ function incrementBackers() {
 
 document.getElementsByClassName("btn-bookmark")[0].addEventListener("click", function () {
     /*https://redstapler.co/toggle-active-button-state-javascript/*/
-    (this.classList.contains("active")) ? this.classList.remove("active"): this.classList.add("active");
+    (this.classList.contains("active-bookmark")) ? this.classList.remove("active-bookmark"): this.classList.add("active-bookmark");
 });
 
 /*progress bar*/
