@@ -66,13 +66,13 @@ function closeModal() {
 
 let pledgeCardsInfo = pledgeCardsData();
 for (let i=0; i < pledgeCardsInfo.length; i++) {
-    pledgeCardsInfo[i].element.addEventListener("click", function() {
+    pledgeCardsInfo[i].element.children[0].addEventListener("click", function() {
         if (!pledgeCardsInfo[i].isOpen) {
-            this.classList.add("open");
+            pledgeCardsInfo[i].element.classList.add("open");
             pledgeCardsInfo[i].isOpen = true;
         }
         else if (pledgeCardsInfo[i].isOpen) {
-            this.classList.remove("open");
+            pledgeCardsInfo[i].element.classList.remove("open");
             pledgeCardsInfo[i].isOpen = false;
         }
     })

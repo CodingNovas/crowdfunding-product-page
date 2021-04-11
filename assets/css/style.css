@@ -310,6 +310,10 @@ section{
     margin-top: 10px;
 }
 
+.pledge-card .title:hover {
+    color: var(--cyan);
+}
+
 .pledge-card .quantity {
     grid-area: quantity;
     display: flex;
