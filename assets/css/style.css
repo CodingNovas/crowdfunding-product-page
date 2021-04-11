@@ -310,11 +310,8 @@ section{
     margin-top: 10px;
 }
 
-.pledge-card .title:hover {
-    color: var(--cyan);
-}
-
 .pledge-card .quantity {
+    cursor: pointer;
     grid-area: quantity;
     display: flex;
     align-self: center;
@@ -331,6 +328,7 @@ section{
 }
 
 .pledge-card .info {
+    cursor: pointer;
     grid-area: info;
 }
 
@@ -345,7 +343,6 @@ section{
 }
 
 .pledge-card .bid label {
-    pointer-events: none;
     grid-area: label;
     margin-top: 25px;
 }
