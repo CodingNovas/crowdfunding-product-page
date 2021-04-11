@@ -285,9 +285,9 @@ section{
     height: 140px;
     overflow: hidden;
     grid-template-areas: 
-    ". title quantity ."
-    ". info  info     ."
-    "bid bid bid    bid"
+    ".   title quantity ."
+    ".   info  info     ."
+    "bid bid   bid    bid"
     ;
 }
 
@@ -340,6 +340,7 @@ section{
 }
 
 .pledge-card .bid label {
+    pointer-events: none;
     grid-area: label;
     margin-top: 25px;
 }
