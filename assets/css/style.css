@@ -60,11 +60,12 @@ h1, h2, h3{
 }
 
 .btn-bookmark{
-    color: var(--Darkgray)
+    color: var(--Darkgray);
 }
 
-.btn-bookmark:hover, .btn-bookmark:active{
-    color: var(--Darkcyan);
+.active-bookmark{
+    color: #292626;
+    filter: brightness(2.45) sepia(0.3) hue-rotate(126deg) saturate(4);
 }
 
 /* ------------- [section] ------------ */
@@ -110,10 +111,6 @@ section{
     top: 0;
     left: 0;
     height: 100%;
-}
-
-.btn-bookmark:hover .bookmark, .btn-bookmark:active{
-    filter: brightness(2.45) sepia(0.3) hue-rotate(126deg) saturate(4);
 }
 
 .bookmark-text{
