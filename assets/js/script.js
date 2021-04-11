@@ -7,6 +7,17 @@ const pledgeCards = document.getElementsByClassName("pledge-card");
 modalBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
 
+function pledgeCardsData() {
+    let pledgeData = [];
+    for (pledgeCard of pledgeCards) {
+        pledgeCardData = {};
+        pledgeCardData.isOpen = false;
+        pledgeCardData.element = pledgeCard;
+        pledgeData.push(pledgeCardData);
+    }
+    return pledgeData;
+}
+
 function openModal() {
     modal.classList.add("active");
     overlay.classList.add("active");
@@ -17,8 +28,17 @@ function closeModal() {
     overlay.classList.remove("active");
 }
 
-for (pledgeCard of pledgeCards) {
-    pledgeCard.addEventListener("click", function() {
-        this.classList.add("open");
+let pledgeCardsInfo = pledgeCardsData();
+
+for (let i=0; i < pledgeCardsInfo.length; i++) {
+    pledgeCardsInfo[i].element.addEventListener("click", function() {
+        if (!pledgeCardsInfo[i].isOpen) {
+            this.classList.add("open");
+            pledgeCardsInfo[i].isOpen = true;
+        }
+        else if (pledgeCardsInfo[i].isOpen) {
+            this.classList.remove("open");
+            pledgeCardsInfo[i].isOpen = false;
+        }
     })
 }
