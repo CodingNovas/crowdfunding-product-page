@@ -62,7 +62,6 @@ function openModal() {
 function closeModal() {
     modal.classList.remove("active");
     overlay.classList.remove("active");
-<<<<<<< HEAD
 }
 
 let pledgeCardsInfo = pledgeCardsData();
@@ -79,6 +78,3 @@ for (let i=0; i < pledgeCardsInfo.length; i++) {
         }
     })
 }
-=======
-}
->>>>>>> 3ba0a161bb6651a5a03abbd99a462b6ef32961a2
