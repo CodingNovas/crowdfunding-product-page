@@ -277,7 +277,6 @@ section{
 }
 
 .pledge-card {
-    cursor: pointer;
     border: 1px solid var(--Darkgray);
     border-radius: 5px;
     display: grid;
@@ -304,6 +303,7 @@ section{
 }
 
 .pledge-card .title {
+    cursor: pointer;
     grid-area: title;
     display: grid;
     align-self: center;
