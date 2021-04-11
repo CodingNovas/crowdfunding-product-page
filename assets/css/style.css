@@ -265,6 +265,10 @@ section{
     color: var(--Darkgray);
 }
 
+#close-btn:hover {
+    color: var(--cyan);
+}
+
 .modal-body {
     grid-area: body;
     display: grid;

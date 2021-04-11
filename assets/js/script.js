@@ -65,7 +65,6 @@ function closeModal() {
 }
 
 let pledgeCardsInfo = pledgeCardsData();
-
 for (let i=0; i < pledgeCardsInfo.length; i++) {
     pledgeCardsInfo[i].element.addEventListener("click", function() {
         if (!pledgeCardsInfo[i].isOpen) {
