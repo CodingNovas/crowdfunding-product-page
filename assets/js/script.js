@@ -81,14 +81,16 @@ function closeModal() {
 
 let pledgeCardsInfo = pledgeCardsData();
 for (let i=0; i < pledgeCardsInfo.length; i++) {
-    pledgeCardsInfo[i].element.children[0].addEventListener("click", function() {
-        if (!pledgeCardsInfo[i].isOpen) {
-            pledgeCardsInfo[i].element.classList.add("open");
-            pledgeCardsInfo[i].isOpen = true;
-        }
-        else if (pledgeCardsInfo[i].isOpen) {
-            pledgeCardsInfo[i].element.classList.remove("open");
-            pledgeCardsInfo[i].isOpen = false;
-        }
-    })
+    for (let j=0; j < pledgeCardsInfo[i].element.children.length - 1; j++) {
+        pledgeCardsInfo[i].element.children[j].addEventListener("click", function() {
+            if (!pledgeCardsInfo[i].isOpen) {
+                pledgeCardsInfo[i].element.classList.add("open");
+                pledgeCardsInfo[i].isOpen = true;
+            }
+            else if (pledgeCardsInfo[i].isOpen) {
+                pledgeCardsInfo[i].element.classList.remove("open");
+                pledgeCardsInfo[i].isOpen = false;
+            }
+        })
+    }
 }
