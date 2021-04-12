@@ -72,7 +72,27 @@ document.getElementsByClassName("btn-bookmark")[0].addEventListener("click", fun
     (this.classList.contains("active-bookmark")) ? this.classList.remove("active-bookmark"): this.classList.add("active-bookmark");
 });
 
-/*progress bar*/
+/*countdown*/
+let countDownDate = new Date ("Aug 11, 2021 00:00:00").getTime();
+var x = setInterval(function() {
+    let currentDate = new Date().getTime();
+    let distance = countDownDate - currentDate;
+
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    console.log();
+
+        if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "THANK YOU FOR YOUR SUPPORT!!!";
+      }
+    }, 1000);
+
 
 
 /* modals */
