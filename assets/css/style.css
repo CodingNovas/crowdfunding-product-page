@@ -184,6 +184,10 @@ section{
     border-radius: 5px;
 }
 
+.pledge-container p{
+    padding-top: 35px;
+}
+
 .stock-text{
     vertical-align: text-top;
     font-size: 80%;
