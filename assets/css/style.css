@@ -28,6 +28,60 @@ body{
     background-color: var(--Offwhite);
 }
 
+.container-fluid{
+    padding: 0;
+    margin: 0;
+
+}
+
+.row{
+    margin: 0;
+    padding: 0;
+}
+
+.logo-position{
+    width: 9rem;
+}
+
+.navbar-padding{
+    padding-top: 25px;
+}
+
+.navbar-toggler{
+    border: none;
+}
+
+.navbar-nav{
+    margin-right: 100px;
+    margin-top: 18px;
+}
+
+.menu-item{
+    margin-left: 20px;
+    color: #fff;
+
+}
+
+.burger-icon{
+    width: 1rem;
+}
+
+.toggler-text{
+    font-weight: 500;
+    text-align: left;
+}
+
+.hero-image{
+    background: url('../../images/image-hero-mobile.jpg');
+    min-height: 300px;
+    min-width: 375px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+}
+
 header{
     margin-bottom: 150px;
 }
@@ -410,6 +464,24 @@ input[type=number] {
 }
 
 /* ------------- [ MEDIA QUERIES - MOBILE ] ------------ */
+
+@media(min-width: 900px){
+    .hero-image {
+        background: url('../../images/image-hero-desktop.jpg');
+        min-width: auto;
+        min-height: 400px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        overflow-x: hidden;  
+    }
+    
+    .navbar-padding {
+        padding-left: 145px;
+    }
+    
+}
 
 @media (max-width: 768px) {
     .pledge-card {
