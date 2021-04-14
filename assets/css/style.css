@@ -413,17 +413,71 @@ input[type=number] {
 /*--FAO Mike: Kelv's additional modals - to be checked---*/
 
 .modal-any {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 5;
-    /* Sit on top */
-    overflow: auto;
-    /* Enable scroll if needed */
-   /* grid layout, sizing, colors to be added */
+   display: none;
+   position: absolute;
+   z-index: 5;
+   overflow: hidden;
+   border: solid 3px darkgrey;
+   background-color: whitesmoke;
+   height: 220px;
+   width: 205px;
+   left: 50%;
+   top:50%;
+   transform: translate(-50%, -50%);
+   grid-template-columns: 50px 100px 50px 5px; 
+   grid-template-rows: 60px 60px 100px; 
+   grid-template-areas: 
+   "pl-title    pl-text1     pl-stock   pl-close"
+   "pl-info     pl-info      pl-info    ."
+   "pl-text2    pl-value     pl-submit  ."; 
 }
 
+
+.pl-title {
+grid-area: pl-title;
+}
+
+.pl-text1 {
+grid-area: pl-text1;
+}
+
+.pl-stock {
+grid-area: pl-stock;
+}
+
+.pl-close {
+grid-area: pl-close;
+}
+
+.pl-info {
+grid-area: pl-info;
+}
+
+.pl-txt2 {
+grid-area: pl-text2;
+}
+
+.pl-value {
+grid-area: pl-value;
+}
+
+.pl-submit {
+grid-area: pl-submit;
+}
+
+.pl-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.pl-close:hover,
+.pl-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 /* ------------- [ MEDIA QUERIES - MOBILE ] ------------ */
 

@@ -146,3 +146,53 @@ for (let i = 0; i < pledgeCardsInfo.length; i++) {
         })
     }
 }
+
+/*-- FAO Mike: Kelv's additional modal scripts - to be checked ---*/
+// Get the modal
+var modalOne = document.getElementById("modal-pledge-bamboo");
+
+
+
+// Get the button that opens the modal
+var btnOne = document.getElementById("btn-open-bamboo-pledge");
+
+
+
+// When the user clicks the button, open the modal 
+btnOne.onclick = function () {
+    modalOne.style.display = "grid";
+}
+
+// Close modal
+
+// Get the <span> element that closes the modal
+var closeOne = document.getElementById("close-pledge-one");
+
+
+// When the user clicks on <span> (x), close the modal
+closeOne.onclick = function () {
+    modalOne.style.display = "none";
+}
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == closeOne) {
+        modalOne.style.display = "none";
+    }
+}
+
+/* Below (calls class name) not working? Above (calls ID) works but then requires multiple instances  
+
+// Close modal
+var modalAny = document.getElementsByClassName("modal-any");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close-pledge");
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modalAny.style.display = "none";
+}
+
+*/
