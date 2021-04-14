@@ -393,6 +393,7 @@ input[type=number] {
     margin-top: 12.5px;
     border-radius: 35px;
     background-color: var(--cyan);
+    text-align: center;
 }
 
 .pledge-card .bid .continue:hover {
@@ -413,9 +414,8 @@ input[type=number] {
 @media (max-width: 768px) {
     .pledge-card {
         height: 180px;
-        grid-template-rows: 60px 60px 30px 80px; /* --- 3 rows --- */
-        row-gap: 10px; /* --- margin between rows --- */
-        grid-template-columns: 5% 90% 5%; /* --- 4 columns --- */
+        grid-template-rows: 60px 60px 30px 80px; /* --- 4 rows --- */
+        grid-template-columns: 5% 90% 5%; /* --- 3 columns --- */
         grid-template-areas: 
         ".   title    ."
         ".   info     ."
@@ -437,14 +437,42 @@ input[type=number] {
 }
 
 @media only screen and (max-width: 576px) {
+    .pledge-card {
+        height: 200px;
+        grid-template-rows: 60px 60px 50px 80px; /* --- 4 rows --- */
+        grid-template-columns: 5% 90% 5%; /* --- 3 columns --- */
+        grid-template-areas: 
+        ".   title    ."
+        ".   info     ."
+        ".   quantity ."
+        "bid bid    bid"; /* --- grid layout --- */
+    }
+
+    .pledge-card .quantity {
+        margin-top: 20px;
+    }
+
+    @keyframes open {
+        0% {height: 200px;}
+        0% {border: 1px solid var(--Black);}
+        100% {height: 280px;}
+        100% {border: 2px solid var(--cyan);}
+    }
+
     .pledge-card .title span {
         padding-left: 0;
         padding-top: 10px;
         display: block;
     }
 
-    .pledge-card .quantity {
-        margin-top: 25px;
+    .pledge-card .bid {
+        grid-template-columns: 5% 40% 25% 25% 5%; /* --- 5 columns --- */
+        grid-template-areas: 
+        ". label input button ."; /* --- grid layout --- */
+    }
+
+    .pledge-card .bid input {
+        margin-left: 10px;
     }
 
     section{
