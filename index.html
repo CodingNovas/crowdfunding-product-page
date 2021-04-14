@@ -66,10 +66,28 @@
       <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
       you’ll be added to a special Backer member list.</p>
       <div class="stock-info"><span class="digit">101</span><span class="stock-text"> left</span></div>
-    <!-- Kelv test comment added -->
-      <button class="btn bg-green">Select Reward</button>
+    <!--FAO Mike: slight change added ID to button-->
+      <button class="btn bg-green" id='btn-open-bamboo-pledge'>Select Reward</button>
     </div>
     
+    <!--FAO Mike: to be checked and then reproduced for 'black edition'-->
+    <div id="modal-pledge-bamboo" class="modal-any">
+      <div class="modal-pledge-content">
+        <h3>Bamboo Stand</h3>
+        <p>Pledge $25 or more</p>
+        <p><strong>101</strong> left</p>
+        <span id="close-pledge-one" class="close-pledge">&times;</span>
+        <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
+            you’ll be added to a special Backer member list.</p>
+        <p>Enter your pledge</p>
+        <div class="modal-pledge-value">
+          <p>$</p>
+          <input type="text" data-type="currency" placeholder="25" required>
+          <button class="continue" type="submit">Continue</button>
+        </div>
+      </div>
+    </div>
+
     <div class="pledge-container">
       <h3>Black Edition Stand</h3>
       <div class="pledge-green">Pledge $75 or more</div>

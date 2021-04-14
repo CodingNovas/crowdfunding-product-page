@@ -409,6 +409,22 @@ input[type=number] {
     pointer-events: none;
 }
 
+
+/*--FAO Mike: Kelv's additional modals - to be checked---*/
+
+.modal-any {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 5;
+    /* Sit on top */
+    overflow: auto;
+    /* Enable scroll if needed */
+   /* grid layout, sizing, colors to be added */
+}
+
+
 /* ------------- [ MEDIA QUERIES - MOBILE ] ------------ */
 
 @media (max-width: 768px) {
