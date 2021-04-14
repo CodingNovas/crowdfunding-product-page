@@ -18,11 +18,27 @@
 </head>
 
 <body>
-  <header>
-    About
-    Discover
-    Get Started
-  </header>
+  <div class="container-fluid">
+    <header class="row">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark navbar-padding">
+            <a class="navbar-logo" href="index.html"><img class="logo-position" src="images/logo.svg"></a>
+            <button class="navbar-toggler button-border" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span><img class="burger-icon" src="images/icon-hamburger.svg"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end toggler-text" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link menu-item" aria-current="page" href="index.html">About</a>
+                    <a class="nav-link menu-item" href="#">Discover</a>
+                    <a class="nav-link menu-item" href="#">Get Started</a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <div class="row hero-image"></div>
+</div>
   <section class="project-intro">
     <img src="images/logo-mastercraft.svg" class="visual-absolute" alt="logo mastercraft"/>
     <h1>Mastercraft Bamboo Monitor Riser</h1>
