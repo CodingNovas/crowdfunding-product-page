@@ -31,7 +31,6 @@ body{
 .container-fluid{
     padding: 0;
     margin: 0;
-
 }
 
 .row{
@@ -59,7 +58,6 @@ body{
 .menu-item{
     margin-left: 20px;
     color: #fff;
-
 }
 
 .burger-icon{
