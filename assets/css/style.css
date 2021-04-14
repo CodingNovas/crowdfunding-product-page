@@ -22,15 +22,13 @@
 }
 
 body{
+    margin: 0 auto;
     font-family: var(--Commissioner);
     font-size: 16px;
     color: var(--Darkgray);
     background-color: var(--Offwhite);
 }
 
-header{
-    margin-bottom: 150px;
-}
 /* ------------- [headers] ------------ */
 
 h1, h2, h3{
@@ -68,6 +66,67 @@ h1, h2, h3{
     color: #292626;
     filter: brightness(2.45) sepia(0.3) hue-rotate(126deg) saturate(4);
 }
+/* -------------- [ header section / hero image ] ----------------- */
+header{
+    margin-bottom: 42vh;
+}
+.container-fluid{
+    padding: 0;
+    margin: 0;
+
+}
+
+.row{
+    margin: 0;
+    padding: 0;
+}
+
+.logo-position{
+    width: 9rem;
+}
+
+.navbar-padding{
+    padding-top: 25px;
+}
+
+.navbar-toggler{
+    border: none;
+}
+
+.navbar-nav{
+    margin-right: 100px;
+    margin-top: 18px;
+    
+}
+
+.menu-item{
+    margin-left: 20px;
+    color: #fff;
+
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255);
+}
+.burger-icon{
+    width: 1rem;
+}
+
+.toggler-text{
+    font-weight: 500;
+    text-align: left;
+}
+
+.hero-image{
+    background: url('../../images/image-hero-desktop.jpg');
+    height: 55vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    overflow-x: hidden;
+
+}
 
 /* ------------- [section] ------------ */
 
@@ -76,7 +135,7 @@ section{
     background-color: white;
     min-width: 636px;
     width: 65%;
-    max-width: 740px;
+    max-width: 750px;
     box-shadow: 0px 0px 1px hsl(0deg 0% 48% / 26%);
     border-radius: 5px;
     padding: 35px;
@@ -91,7 +150,7 @@ section{
 
 .visual-absolute{
     position: absolute;
-    top: -30px;;
+    top: -30px;
     left: 45%;
 }
 
@@ -126,7 +185,7 @@ section{
     flex-wrap: wrap;
 }
 
-.border{
+.border-progress{
     border-left: 2px solid hsl(0deg 0% 48% / 50%);
     border-right: 2px solid hsl(0deg 0% 48% / 50%);
     margin-left: 35px;
@@ -453,6 +512,22 @@ input[type=number] {
 }
 
 @media only screen and (max-width: 576px) {
+
+    .hero-image{
+        background: url('../../images/image-hero-mobile.jpg');
+        height: 35vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+    header{
+        margin-bottom: 28vh;
+    }
+    /*
+    .navbar-padding{
+        padding-left: 145px;
+    }*/
+
     .pledge-card {
         height: 200px;
         grid-template-rows: 60px 60px 50px 80px; /* --- 4 rows --- */
@@ -518,7 +593,7 @@ input[type=number] {
         text-align: center;
     }
 
-    .border{
+    .border-progress{
         width: fit-content;
         border: none;
         padding: 0;
@@ -568,3 +643,12 @@ input[type=number] {
     }
 
 }
+/*
+@media(min-width: 900px){  
+    .hero-image{
+        background: url('../../images/image-hero-mobile.jpg');
+        }
+    .navbar-padding{
+        padding-left: 145px;
+    }
+    }*/
