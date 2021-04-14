@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /* ------------- [ Fonts ] ----------------- */
 
@@ -552,3 +553,89 @@ input[type=number] {
     }
 
 }
+=======
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    display: block;
+    }
+
+.container-fluid{
+    padding: 0;
+    margin: 0;
+
+}
+
+.row{
+    margin: 0;
+    padding: 0;
+}
+
+.logo-position{
+    width: 9rem;
+}
+
+.navbar-padding{
+    padding-top: 25px;
+}
+
+.navbar-toggler{
+    border: none;
+}
+
+.navbar-nav{
+    margin-right: 100px;
+    margin-top: 18px;
+}
+
+.menu-item{
+    margin-left: 20px;
+    color: #fff;
+
+}
+
+.burger-icon{
+    width: 1rem;
+}
+
+.toggler-text{
+    font-weight: 500;
+    text-align: left;
+}
+
+.hero-image{
+    background: url('../../images/image-hero-mobile.jpg');
+    min-height: 300px;
+    min-width: 375px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+
+}
+
+@media(min-width: 900px){
+.hero-image{
+    background: url('../../images/image-hero-desktop.jpg');
+    min-width: auto;
+    min-height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+        
+    }
+
+.navbar-padding{
+    padding-left: 145px;
+}
+
+}
+>>>>>>> 365fdeb04e31480f94559b2c96b503ef36650598
