@@ -169,3 +169,33 @@ for (let i = 0; i < pledgeCardsInfo.length; i++) {
         })
     }
 }
+
+let anyPledge = document.getElementById("any-pledge");
+let bambooPledge = document.getElementById("bamboo-pledge");
+let blackEditionPledge = document.getElementById("black-edition-pledge");
+let anyBtn = document.getElementById("any-continue");
+let bambooBtn = document.getElementById("bamboo-continue");
+let blackEditionBtn = document.getElementById("black-edition-continue");
+
+anyBtn.addEventListener("click", function() {
+    getUserPledge(anyPledge, 0);
+})
+
+bambooBtn.addEventListener("click", function() {
+    getUserPledge(bambooPledge, 25);
+})
+
+blackEditionBtn.addEventListener("click", function() {
+    getUserPledge(blackEditionPledge, 75);
+})
+
+function getUserPledge(pledgeAmount, minAmount) {
+    if (pledgeAmount.value >= minAmount) {
+        let userPledge = pledgeAmount.value;
+        console.log(userPledge);
+        return userPledge;
+    }
+    else {
+        alert ("Please enter a higher pledge");
+    }
+}
