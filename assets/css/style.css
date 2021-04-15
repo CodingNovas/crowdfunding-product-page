@@ -87,7 +87,11 @@ h3 {
 /* -------------- [ header section / hero image ] ----------------- */
 
 header {
+    width: 100%;
+    padding: 0;
+    margin: 0;
     margin-bottom: 180px;
+    position: relative;
 }
 
 .container-fluid {
@@ -115,10 +119,7 @@ header {
 }
 
 .navbar-nav {
-    /*margin-right: 100px;*/
-    
     width: fit-content;
-    
     margin-top: 18px;
 }
 
@@ -560,6 +561,49 @@ input[type=number] {
 /* ------------- [ MEDIA QUERIES - MOBILE ] ------------ */
 
 @media (max-width: 768px) {
+
+    .hero-image {
+        background: url('../../images/image-hero-mobile.jpg');
+        height: 285px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .header {
+        margin-bottom: 165px;    
+    }
+
+    .row{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .navbar-nav{
+        width: 95%;
+        text-align: left;
+        background-color: var(--Offwhite);
+        border-radius: 5px;
+        box-shadow: 0px 20px 400px 72px rgb(0 0 0 / 67%);
+        /*, 0px 0px 400px 25px rgb(0 0 0 / 85%) inset*/
+        position: absolute;
+        z-index: 2;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        color: var(--Darkgray);
+        padding: 25px 15px;
+        margin: 0;
+    }
+    .border-menu{
+        border-top: 2px solid hsl(0deg 0% 48% / 50%);
+    border-bottom: 2px solid hsl(0deg 0% 48% / 50%);
+    }
+
+    section{
+        width: 95%;
+        min-width: 500px;
+    }
+    
     .pledge-card {
         height: 180px;
         grid-template-rows: 60px 60px 30px 80px;
@@ -600,22 +644,7 @@ input[type=number] {
 
 @media only screen and (max-width: 576px) {
 
-    .hero-image {
-        background: url('../../images/image-hero-mobile.jpg');
-        height: 285px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
 
-    header {
-        margin-bottom: 165px;
-    }
-
-    /*
-    .navbar-padding{
-        padding-left: 145px;
-    }*/
 
     .pledge-card {
         height: 200px;
