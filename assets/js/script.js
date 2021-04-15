@@ -242,8 +242,7 @@ blackEditionBtn.addEventListener("click", function() {
 function getUserPledge(pledgeAmount, minAmount) {
     if (pledgeAmount.value >= minAmount) {
         let userPledge = pledgeAmount.value;
-        console.log(userPledge);
-        return userPledge;
+        incrementTotal(userPledge);
     }
     else {
         alert ("Please enter a higher pledge");
