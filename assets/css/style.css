@@ -641,6 +641,11 @@ input[type=number] {
 
     .pledge-card .bid input {
         margin-left: 10px;
+        border-radius: 10px;
+    }
+
+    .pledge-card .bid .continue {
+        border-radius: 10px;
     }
 
     section {
