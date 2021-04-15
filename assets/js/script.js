@@ -30,6 +30,11 @@ let currentAmount0 = parseInt(document.getElementById("total-amount").innerHTML.
 let widthCalc = (currentAmount0 / 100000) * 100
 root.style.setProperty('--Width', widthCalc + "%");
 
+/*--------------- [click toggle button ] ------------------- */
+document.getElementsByClassName("navbar-toggler")[0].addEventListener("click", function () {
+  (this.classList.contains("toggled")) ? this.classList.remove("toggled"): this.classList.add("toggled");
+})
+
 /*--------------- [increment total amounts & backer] -------------- */
 
 let pledge = document.getElementsByClassName("continue");
@@ -86,19 +91,33 @@ let countDownDate = new Date("Aug 11, 2021 00:00:00").getTime();
 var x = setInterval(function () {
     let currentDate = new Date().getTime();
     let distance = countDownDate - currentDate;
-
+    //Calculate days
     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let contDown = days + "d";
+    console.log(days);
+    //Calculate hours and seconds
     let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("countdown").innerHTML = days + "d " + hours + "h " +
-        minutes + "m " + seconds + "s ";
-    console.log();
-
+    //Fetch the right value according to distance left
+    if(days == "0")
+    { 
+        contDown = hours + "h";
+    }
+    if ((days == "0") && (hours == "0"))
+    {
+        contDown = minutes + "m";
+    }
+    if ((days == "0") && (hours == "0") && (minutes == "0"))
+    {
+        contDown = seconds + "s";
+    }
+    //Upadate HTML    
+    document.getElementById("countdown").innerHTML = contDown;
+    //Once finished
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("countdown").innerHTML = "THANK YOU FOR YOUR SUPPORT!!!";
+        document.getElementById("countdown").innerHTML = "THANKS!!!";
     }
 }, 1000);
 
