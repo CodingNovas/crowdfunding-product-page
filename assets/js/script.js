@@ -7,10 +7,12 @@
 if (typeof (Storage) !== "undefined") {
     // Retrieve total amount
     if (localStorage.totalAmount) {
-        let webAmount = localStorage.getItem("totalAmount");
+        let webAmount = parseInt(localStorage.getItem("totalAmount"));
+        console.log("webAmount = " + webAmount);
         // check if NaN value 
-        if (webAmount = "NaN")
+        if (webAmount == "NaN")
         {
+            console.log("web amount is NaN")
             webAmount = 20;
         }
         document.getElementById("total-amount").innerHTML = webAmount;
@@ -48,14 +50,27 @@ for (let i = 0; i < pledge.length; i++) {
     document.getElementsByClassName("continue")[i].addEventListener("click", function () {
         //Fetch amount from imput 
         let amount = parseInt(document.getElementsByClassName("continue")[i].previousElementSibling.value);
+        console.log("amount = " + amount);
+        //Fetch minium amount 
+        let nodeEl = document.getElementsByClassName("continue")[i].previousElementSibling;
+        let minAmount = parseInt(nodeEl.getAttributeNode("min").value);
+        console.log("min amount = " + minAmount);
         //Fetch default value if no amount is entered
-        if (amount = "NaN")
+        if (amount == "NaN")
         {
-            let nodeEl = document.getElementsByClassName("continue")[i].previousElementSibling;
-            amount = parseInt(nodeEl.getAttributeNode("min").value);
+            amount = parseInt(minAmount);
+            console.log("amount is NaN so amount = " + amount);
         }
-        incrementTotal(amount);
-        incrementBackers();
+        
+        if (amount >= minAmount) {
+                console.log("total & backers should increment")
+                incrementTotal(amount);
+                incrementBackers();
+        }
+        else {
+                alert ("Please enter a higher pledge");
+        }
+        
     })
 }
 
@@ -220,6 +235,8 @@ span.onclick = function () {
 }
 
 */
+
+/*
 let anyPledge = document.getElementById("any-pledge");
 let bambooPledge = document.getElementById("bamboo-pledge");
 let blackEditionPledge = document.getElementById("black-edition-pledge");
@@ -239,6 +256,7 @@ blackEditionBtn.addEventListener("click", function() {
     getUserPledge(blackEditionPledge, 75);
 })
 
+
 function getUserPledge(pledgeAmount, minAmount) {
     if (pledgeAmount.value >= minAmount) {
         let userPledge = pledgeAmount.value;
@@ -248,3 +266,4 @@ function getUserPledge(pledgeAmount, minAmount) {
         alert ("Please enter a higher pledge");
     }
 }
+*/
