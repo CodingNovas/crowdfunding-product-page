@@ -8,7 +8,6 @@ if (typeof (Storage) !== "undefined") {
     // Retrieve total amount
     if (localStorage.totalAmount) {
         document.getElementById("total-amount").innerHTML = localStorage.getItem("totalAmount");
-        console.log("logging localStorage total amount = " + localStorage.totalAmount)
     } else {
         document.getElementById("total-amount").innerHTML = 10;
 
@@ -16,7 +15,6 @@ if (typeof (Storage) !== "undefined") {
     // Retrieve backers
     if (localStorage.backers) {
         document.getElementById("backers").innerHTML = localStorage.getItem("backers");
-        console.log("logging localStorage backers = " + localStorage.backers)
     } else {
         document.getElementById("backers").innerHTML = 5;
     }
@@ -39,6 +37,12 @@ for (let i = 0; i < pledge.length; i++) {
     document.getElementsByClassName("continue")[i].addEventListener("click", function () {
         //Fetch amount from imput 
         let amount = parseInt(document.getElementsByClassName("continue")[i].previousElementSibling.value);
+        //Fetch default value if no amount is entered
+        if (amount = "NaN")
+        {
+            let nodeEl = document.getElementsByClassName("continue")[i].previousElementSibling;
+            amount = parseInt(nodeEl.getAttributeNode("min").value);
+        }
         incrementTotal(amount);
         incrementBackers();
     })

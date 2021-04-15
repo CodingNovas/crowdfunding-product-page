@@ -1,4 +1,3 @@
-
 /* ------------- [ Fonts ] ----------------- */
 
 @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
@@ -11,17 +10,17 @@
     --Darkgray: hsl(0, 0%, 48%);
     --Offwhite: rgb(250 250 250);
     --Commissioner: 'Commissioner', sans-serif;
-    --Width:  0%;
+    --Width: 0%;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     outline: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0 auto;
     font-family: var(--Commissioner);
     font-size: 16px;
@@ -31,12 +30,29 @@ body{
 
 /* ------------- [headers] ------------ */
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
     color: var(--Black);
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 1.75em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.17em;
 }
 
 /* ------------- [buttons] ------------ */
-.btn{
+.btn {
     padding: 12px 35px;
     border: none;
     border-radius: 35px;
@@ -46,91 +62,98 @@ h1, h2, h3{
     cursor: pointer;
 }
 
-.bg-green{
+.bg-green {
     background-color: var(--cyan);
 }
 
-.bg-gray{
+.bg-gray {
     background-color: var(--Darkgray);
 }
 
-.bg-green:hover, .bg-green:active{
+.bg-green:hover,
+.bg-green:active {
     background-color: var(--Darkcyan);
 }
 
-.btn-bookmark{
+.btn-bookmark {
     color: var(--Darkgray);
 }
 
-.active-bookmark{
+.active-bookmark {
     color: #292626;
     filter: brightness(2.45) sepia(0.3) hue-rotate(126deg) saturate(4);
 }
+
 /* -------------- [ header section / hero image ] ----------------- */
-header{
-    margin-bottom: 42vh;
+
+header {
+    margin-bottom: 180px;
 }
-.container-fluid{
+
+.container-fluid {
     padding: 0;
     margin: 0;
-
 }
 
-.row{
-    margin: 0;
+.row {
+    margin: 0 auto;
     padding: 0;
+    width: 95%;
+    max-width: 1600px;
 }
 
-.logo-position{
+.logo-position {
     width: 9rem;
 }
 
-.navbar-padding{
+.navbar-padding {
     padding-top: 25px;
 }
 
-.navbar-toggler{
+.navbar-toggler {
     border: none;
 }
 
-.navbar-nav{
-    margin-right: 100px;
-    margin-top: 18px;
+.navbar-nav {
+    /*margin-right: 100px;*/
     
+    width: fit-content;
+    
+    margin-top: 18px;
 }
 
-.menu-item{
+.menu-item {
     margin-left: 20px;
     color: #fff;
+}
 
-}
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255,255,255);
+    color: rgba(255, 255, 255);
 }
-.burger-icon{
+
+.burger-icon {
     width: 1rem;
 }
 
-.toggler-text{
+.toggler-text {
     font-weight: 500;
     text-align: left;
 }
 
-.hero-image{
+.hero-image {
     background: url('../../images/image-hero-desktop.jpg');
-    height: 55vh;
+    height: 400px;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
     overflow-x: hidden;
-
 }
 
 /* ------------- [section] ------------ */
 
-section{
+section {
     margin: auto;
     background-color: white;
     min-width: 636px;
@@ -144,48 +167,49 @@ section{
 
 /* ------------- [section project intro] ------------ */
 
-.project-intro{
+.project-intro {
     position: relative;
 }
 
-.visual-absolute{
+.visual-absolute {
     position: absolute;
     top: -30px;
     left: 45%;
 }
 
-.project-intro h1, .project-intro p{
+.project-intro h1,
+.project-intro p {
     text-align: center;
     margin: 15px;
 }
 
-.flex-intro{
+.flex-intro {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     padding-top: 15px;
 }
 
-.bookmark{
+.bookmark {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
 }
 
-.bookmark-text{
+.bookmark-text {
     padding-left: 25px;
 }
 
 /* ------------- [Progress] ------------ */
 
-.backers-progress{
+.backers-progress {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.border-progress{
+.border-progress {
     border-left: 2px solid hsl(0deg 0% 48% / 50%);
     border-right: 2px solid hsl(0deg 0% 48% / 50%);
     margin-left: 35px;
@@ -194,46 +218,47 @@ section{
     padding-left: 35px;
 }
 
-.digit{
-    font-weight:700;
+.digit {
+    font-weight: 700;
     color: var(--Black);
     font-size: 170%;
     padding-bottom: 8px;
 }
 
-.progress-bar{
+.progress-bar {
     margin-top: 25px;
     background-color: lightgray;
     width: 100%;
     height: 10px;
     border-radius: 5px;
-    
 }
 
-.progress{
+.progress {
     /*width: 89.9%;*/
     width: var(--Width);
     height: 10px;
     background-color: hsl(176, 50%, 47%);
     border-radius: 5px;
 }
+
 /* ------------- [ Project ] ------------ */
 
-.about-this-project p, .about-this-project h2{
+.about-this-project p,
+.about-this-project h2 {
     padding-bottom: 35px;
 }
 
-.pledge-green{
+.pledge-green {
     color: var(--cyan);
     font-weight: 500;
     font-size: 80%;
 }
 
-.about-this-project p{
+.about-this-project p {
     width: 100%;
 }
 
-.pledge-container{
+.pledge-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -243,11 +268,11 @@ section{
     border-radius: 5px;
 }
 
-.pledge-container p{
+.pledge-container p {
     padding-top: 35px;
 }
 
-.stock-text{
+.stock-text {
     vertical-align: text-top;
     font-size: 80%;
     padding-left: 5px;
@@ -270,12 +295,15 @@ section{
     height: auto;
     overflow: hidden;
     display: grid;
-    grid-template-rows: repeat(2, auto) 20px; /* --- 3 rows --- */
-    grid-auto-columns: 5% 90% 5%; /* --- 3 columns --- */
-    grid-template-areas: 
-    ". header ."
-    ". body   ."
-    ". ....   ."; /* --- grid layout --- */
+    grid-template-rows: repeat(2, auto) 20px;
+    /* --- 3 rows --- */
+    grid-auto-columns: 5% 90% 5%;
+    /* --- 3 columns --- */
+    grid-template-areas:
+        ". header ."
+        ". body   ."
+        ". ....   .";
+    /* --- grid layout --- */
 }
 
 #modal.active {
@@ -283,8 +311,13 @@ section{
 }
 
 @keyframes openModal {
-    0% {transform: translate(-50%, -50%) scale(0);}
-    100% {transform: translate(-50%, -50%) scale(1);}
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 #overlay {
@@ -305,8 +338,13 @@ section{
 }
 
 @keyframes overlay {
-    0% {opacity: 0;}
-    100% {opacity: 0.5;}
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
 }
 
 .modal-header {
@@ -325,7 +363,8 @@ section{
 }
 
 .modal-header p {
-    grid-area: parag; /* --- assigned area from parent grid layout --- */
+    grid-area: parag;
+    /* --- assigned area from parent grid layout --- */
 }
 
 #close-modal {
@@ -345,10 +384,13 @@ section{
 }
 
 .modal-body {
-    grid-area: body; /* --- assigned area from parent grid layout --- */
+    grid-area: body;
+    /* --- assigned area from parent grid layout --- */
     display: grid;
-    grid-template-columns: 100%; /* --- 1 column --- */
-    row-gap: 20px; /* --- margin between rows (if rows is not set it's default is auto) --- */
+    grid-template-columns: 100%;
+    /* --- 1 column --- */
+    row-gap: 20px;
+    /* --- margin between rows (if rows is not set it's default is auto) --- */
 }
 
 .pledge-card {
@@ -370,15 +412,27 @@ section{
 }
 
 @keyframes open {
-    0% {height: 140px;}
-    0% {border: 1px solid var(--Black);}
-    100% {height: 220px;}
-    100% {border: 2px solid var(--cyan);}
+    0% {
+        height: 140px;
+    }
+
+    0% {
+        border: 1px solid var(--Black);
+    }
+
+    100% {
+        height: 220px;
+    }
+
+    100% {
+        border: 2px solid var(--cyan);
+    }
 }
 
 .pledge-card .title {
     cursor: pointer;
-    grid-area: title; /* --- assigned area from parent grid layout --- */
+    grid-area: title;
+    /* --- assigned area from parent grid layout --- */
     display: grid;
     align-self: center;
     margin-top: 10px;
@@ -386,7 +440,8 @@ section{
 
 .pledge-card .quantity {
     cursor: pointer;
-    grid-area: quantity; /* --- assigned area from parent grid layout --- */
+    grid-area: quantity;
+    /* --- assigned area from parent grid layout --- */
     display: flex;
     align-self: center;
     margin-top: 10px;
@@ -408,22 +463,28 @@ section{
 }
 
 .pledge-card .bid {
-    grid-area: bid; /* --- assigned area from parent grid layout --- */
+    grid-area: bid;
+    /* --- assigned area from parent grid layout --- */
     border-top: 1px solid var(--Darkgray);
     display: grid;
-    grid-template-rows: 100px; /* --- 1 row --- */
-    grid-template-columns: 5% 50% 20% 20% 5%; /* --- 5 columns --- */
-    grid-template-areas: 
-    ". label input button ."; /* --- grid layout --- */
+    grid-template-rows: 100px;
+    /* --- 1 row --- */
+    grid-template-columns: 5% 50% 20% 20% 5%;
+    /* --- 5 columns --- */
+    grid-template-areas:
+        ". label input button .";
+    /* --- grid layout --- */
 }
 
 .pledge-card .bid label {
-    grid-area: label; /* --- assigned area from parent grid layout --- */
+    grid-area: label;
+    /* --- assigned area from parent grid layout --- */
     margin-top: 27.5px;
 }
 
 .pledge-card .bid input {
-    grid-area: input; /* --- assigned area from parent grid layout --- */
+    grid-area: input;
+    /* --- assigned area from parent grid layout --- */
     border: none;
     height: 50%;
     width: 75%;
@@ -435,17 +496,18 @@ section{
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 .pledge-card .bid .continue {
     cursor: pointer;
-    grid-area: button; /* --- assigned area from parent grid layout --- */
+    grid-area: button;
+    /* --- assigned area from parent grid layout --- */
     border: none;
     height: 50%;
     margin-top: 12.5px;
@@ -479,7 +541,7 @@ input[type=number] {
     /* Sit on top */
     overflow: auto;
     /* Enable scroll if needed */
-   /* grid layout, sizing, colors to be added */
+    /* grid layout, sizing, colors to be added */
 }
 
 
@@ -498,10 +560,21 @@ input[type=number] {
     }
 
     @keyframes open {
-        0% {height: 180px;}
-        0% {border: 1px solid var(--Black);}
-        100% {height: 260px;}
-        100% {border: 2px solid var(--cyan);}
+        0% {
+            height: 180px;
+        }
+
+        0% {
+            border: 1px solid var(--Black);
+        }
+
+        100% {
+            height: 260px;
+        }
+
+        100% {
+            border: 2px solid var(--cyan);
+        }
     }
 
     .pledge-card .quantity {
@@ -512,16 +585,18 @@ input[type=number] {
 
 @media only screen and (max-width: 576px) {
 
-    .hero-image{
+    .hero-image {
         background: url('../../images/image-hero-mobile.jpg');
-        height: 35vh;
+        height: 285px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        }
-    header{
-        margin-bottom: 28vh;
     }
+
+    header {
+        margin-bottom: 165px;
+    }
+
     /*
     .navbar-padding{
         padding-left: 145px;
@@ -557,43 +632,46 @@ input[type=number] {
     }
 
     .pledge-card .bid {
-        grid-template-columns: 5% 40% 25% 25% 5%; /* --- 5 columns --- */
-        grid-template-areas: 
-        ". label input button ."; /* --- grid layout --- */
+        grid-template-columns: 5% 40% 25% 25% 5%;
+        /* --- 5 columns --- */
+        grid-template-areas:
+            ". label input button .";
+        /* --- grid layout --- */
     }
 
     .pledge-card .bid input {
         margin-left: 10px;
     }
 
-    section{
+    section {
         min-width: 90%;
         width: 90%;
         padding-left: 15px;
         padding-right: 15px;
     }
-    .flex-intro{
+
+    .flex-intro {
         justify-content: space-around;
     }
-    
-    .btn-bookmark{
+
+    .btn-bookmark {
         padding: 10px;
     }
 
-    .bookmark-text{
+    .bookmark-text {
         display: none;
     }
 
-    .backers-progress{
+    .backers-progress {
         justify-content: center;
     }
 
-    .progress-item{
+    .progress-item {
         width: 100%;
         text-align: center;
     }
 
-    .border-progress{
+    .border-progress {
         width: fit-content;
         border: none;
         padding: 0;
@@ -603,24 +681,24 @@ input[type=number] {
         margin-top: 35px;
         margin-bottom: 35px;
         padding-top: 35px;
-        padding-bottom: 35px;  
+        padding-bottom: 35px;
     }
 
-    .pledge-container{
+    .pledge-container {
         display: block;
-        
+
     }
 
-    .pledge-green{
+    .pledge-green {
         padding-top: 15px;
         font-size: 100%;
     }
 
-    .pledge-container p{
+    .pledge-container p {
         padding-top: 25px;
     }
 
-    .stock-info{
+    .stock-info {
         padding-bottom: 25px;
     }
 }
@@ -628,14 +706,26 @@ input[type=number] {
 @media (max-width: 455px) {
     .pledge-card {
         height: 220px;
-        grid-template-rows: 60px 80px 50px 80px; /* --- 4 rows --- */
+        grid-template-rows: 60px 80px 50px 80px;
+        /* --- 4 rows --- */
     }
 
     @keyframes open {
-        0% {height: 220px;}
-        0% {border: 1px solid var(--Black);}
-        100% {height: 300px;}
-        100% {border: 2px solid var(--cyan);}
+        0% {
+            height: 220px;
+        }
+
+        0% {
+            border: 1px solid var(--Black);
+        }
+
+        100% {
+            height: 300px;
+        }
+
+        100% {
+            border: 2px solid var(--cyan);
+        }
     }
 
     .pledge-card .info {
@@ -643,6 +733,7 @@ input[type=number] {
     }
 
 }
+
 /*
 @media(min-width: 900px){  
     .hero-image{
