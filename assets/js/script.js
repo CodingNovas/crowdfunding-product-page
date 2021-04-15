@@ -7,7 +7,13 @@
 if (typeof (Storage) !== "undefined") {
     // Retrieve total amount
     if (localStorage.totalAmount) {
-        document.getElementById("total-amount").innerHTML = localStorage.getItem("totalAmount");
+        let webAmount = localStorage.getItem("totalAmount");
+        // check if NaN value 
+        if (webAmount = "NaN")
+        {
+            webAmount = 20;
+        }
+        document.getElementById("total-amount").innerHTML = webAmount;
     } else {
         document.getElementById("total-amount").innerHTML = 10;
 
@@ -253,8 +259,7 @@ blackEditionBtn.addEventListener("click", function() {
 function getUserPledge(pledgeAmount, minAmount) {
     if (pledgeAmount.value >= minAmount) {
         let userPledge = pledgeAmount.value;
-        console.log(userPledge);
-        return userPledge;
+        incrementTotal(userPledge);
     }
     else {
         alert ("Please enter a higher pledge");
