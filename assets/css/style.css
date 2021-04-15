@@ -257,16 +257,16 @@ section{
 
 #modal {
     position: absolute;
-    top: 75%;
+    top: 100%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: 0.25s ease-in-out;
     border: 1px solid var(--Black);
     border-radius: 5px;
     background-color: var(--Offwhite);
-    z-index: 2;
+    z-index: 999;
     width: 80%;
-    max-width: 740px;
+    max-width: 750px;
     height: auto;
     overflow: hidden;
     display: grid;
@@ -311,28 +311,27 @@ section{
 
 .modal-header {
     grid-area: header; /* --- assigned area from parent grid layout --- */
-    padding-top: 20px;
     display: grid;
-    grid-template-rows: 20% 40% 40%; /* --- 3 rows --- */
+    border: none;
+    grid-template-rows: 1fr 1fr; /* --- 3 rows --- */
     grid-template-columns: 99% 1%; /* --- 2 columns --- */
     grid-template-areas: 
-    "..... close"
-    "title ....."
+    "title close"
     "parag ....."; /* --- grid layout --- */
 }
 
 .modal-header h2 {
     grid-area: title; /* --- assigned area from parent grid layout --- */
-    padding-bottom: 40px;
 }
 
 .modal-header p {
     grid-area: parag; /* --- assigned area from parent grid layout --- */
 }
 
-#close-btn {
+#close-modal {
     grid-area: close; /* --- assigned area from parent grid layout --- */
     cursor: pointer;
+    align-self: start;
     border: none;
     outline: none;
     background: none;
@@ -341,7 +340,7 @@ section{
     color: var(--Darkgray);
 }
 
-#close-btn:hover {
+#close-modal:hover {
     color: var(--cyan);
 }
 
@@ -358,8 +357,7 @@ section{
     height: 140px;
     overflow: hidden;
     display: grid;
-    grid-template-rows: repeat(2, 60px) 80px; /* --- 3 rows --- */
-    row-gap: 10px; /* --- margin between rows --- */
+    grid-template-rows: 60px 80px 80px; /* --- 3 rows --- */
     grid-template-columns: 5% 80% 10% 5%; /* --- 4 columns --- */
     grid-template-areas: 
     ".   title quantity ."
@@ -406,6 +404,7 @@ section{
 .pledge-card .info {
     cursor: pointer;
     grid-area: info; /* --- assigned area from parent grid layout --- */
+    align-self: start;
 }
 
 .pledge-card .bid {
@@ -489,7 +488,7 @@ input[type=number] {
 @media (max-width: 768px) {
     .pledge-card {
         height: 180px;
-        grid-template-rows: 60px 60px 30px 80px; /* --- 4 rows --- */
+        grid-template-rows: 60px 60px 60px 80px; /* --- 4 rows --- */
         grid-template-columns: 5% 90% 5%; /* --- 3 columns --- */
         grid-template-areas: 
         ".   title    ."
@@ -506,7 +505,7 @@ input[type=number] {
     }
 
     .pledge-card .quantity {
-        margin-top: 10px;
+        margin-top: 20px;
         margin-bottom: 10px;
     }
 }
@@ -529,8 +528,9 @@ input[type=number] {
     }*/
 
     .pledge-card {
-        height: 200px;
-        grid-template-rows: 60px 60px 50px 80px; /* --- 4 rows --- */
+        height: 240px;
+        row-gap: 20px;
+        grid-template-rows: 60px 80px 40px 80px; /* --- 4 rows --- */
         grid-template-columns: 5% 90% 5%; /* --- 3 columns --- */
         grid-template-areas: 
         ".   title    ."
@@ -540,13 +540,13 @@ input[type=number] {
     }
 
     .pledge-card .quantity {
-        margin-top: 20px;
+        margin-bottom: 0;
     }
 
     @keyframes open {
-        0% {height: 200px;}
+        0% {height: 240px;}
         0% {border: 1px solid var(--Black);}
-        100% {height: 280px;}
+        100% {height: 320px;}
         100% {border: 2px solid var(--cyan);}
     }
 
