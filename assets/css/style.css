@@ -298,7 +298,7 @@ section {
     display: grid;
     grid-template-rows: repeat(2, auto) 20px;
     /* --- 3 rows --- */
-    grid-auto-columns: 5% 90% 5%;
+    grid-auto-columns: 2.5% 95% 2.5%;
     /* --- 3 columns --- */
     grid-template-areas:
         ". header ."
@@ -352,10 +352,11 @@ section {
     grid-area: header; /* --- assigned area from parent grid layout --- */
     display: grid;
     border: none;
-    grid-template-rows: 1fr 1fr; /* --- 3 rows --- */
+    grid-template-rows: 1fr .5fr .5fr; /* --- 3 rows --- */
     grid-template-columns: 99% 1%; /* --- 2 columns --- */
     grid-template-areas: 
     "title close"
+    "..... ....."
     "parag ....."; /* --- grid layout --- */
 }
 
