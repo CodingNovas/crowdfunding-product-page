@@ -174,29 +174,46 @@ for (let i = 0; i < pledgeCardsInfo.length; i++) {
 // Get the modal
 
 var modalOne = document.getElementById("sub-pl-bamboo");
+var modalTwo = document.getElementById("sub-pl-blackedt");
 
 // Get the button that opens the modal
 var btnOne = document.getElementById("btn-open-sub-pl-bamboo");
+var btnTwo = document.getElementById("btn-open-sub-pl-blackedt");
 
 // When the user clicks the button, open the modal 
 btnOne.onclick = function () {
     modalOne.style.display = "grid";
 }
 
+btnTwo.onclick = function () {
+    modalTwo.style.display = "grid";
+}
+
 // Close modal
 
 // Get the <span> element that closes the modal
 var closeOne = document.getElementById("close-sub-pl-bamboo");
+var closeTwo = document.getElementById("close-sub-pl-blackedt");
 
 // When the user clicks on <span> (x), close the modal
 closeOne.onclick = function () {
     modalOne.style.display = "none";
 }
 
+closeTwo.onclick = function () {
+    modalTwo.style.display = "none";
+}
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     if (event.target == closeOne) {
         modalOne.style.display = "none";
+    }
+}
+
+window.onclick = function (event) {
+    if (event.target == closeTwo) {
+        modalTwo.style.display = "none";
     }
 }
 
