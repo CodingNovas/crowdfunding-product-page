@@ -109,7 +109,7 @@ var x = setInterval(function () {
 const modalBtn = document.getElementById("modal-btn");
 const modal = document.getElementById("modal");
 const overlay = document.getElementById("overlay");
-const closeBtn = document.getElementById("close-btn");
+const closeBtn = document.getElementById("close-modal");
 const pledgeCards = document.getElementsByClassName("pledge-card");
 
 modalBtn.addEventListener("click", openModal);
