@@ -114,9 +114,7 @@ header {
     padding-top: 25px;
 }
 
-.navbar-toggler {
-    border: none;
-}
+
 
 .navbar-nav {
     width: fit-content;
@@ -131,11 +129,14 @@ header {
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255);
 }
-
+/*
 .burger-icon {
     width: 1rem;
 }
-
+.close-menu-icon{
+    width: 1.2rem;
+    display: none;
+}*/
 .toggler-text {
     font-weight: 500;
     text-align: left;
@@ -573,7 +574,6 @@ input[type=number] {
         background-color: var(--Offwhite);
         border-radius: 5px;
         box-shadow: 0px 20px 400px 72px rgb(0 0 0 / 67%);
-        /*, 0px 0px 400px 25px rgb(0 0 0 / 85%) inset*/
         position: absolute;
         z-index: 2;
     }
@@ -582,6 +582,19 @@ input[type=number] {
         padding: 25px 15px;
         margin: 0;
     }
+
+    .navbar-toggler{
+        background-image: url('/images/icon-hamburger.svg');
+        width: auto;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .toggled{
+        background-image: url('/images/icon-close-menu.svg');
+    }
+
     .border-menu{
         border-top: 2px solid hsl(0deg 0% 48% / 50%);
     border-bottom: 2px solid hsl(0deg 0% 48% / 50%);
