@@ -88,25 +88,18 @@
       <div class="stock-info"><span class="digit">101</span><span class="stock-text"> left</span></div>
       
     <!-- FAO Mike: slight change added ID to button -->
-      <button class="btn bg-green" id='btn-open-bamboo-pledge'>Select Reward</button>
+      <button class="btn bg-green" id="btn-open-sub-pl-bamboo">Select Reward</button>
     </div>
     
-    <!-- FAO Mike: to be checked and then reproduced for 'black edition'-->
-    <div id="modal-pledge-bamboo" class="modal-any">
-      <div class="modal-pledge-content">
-        <h3 class="pl-title">Bamboo Stand</h3>
-        <p class="pl-text">Pledge $25 or more</p>
-        <p class="pl-stock"><strong>101</strong> left</p>
-        <span id="close-pledge-one" class="pl-close">&times;</span>
-        <p class="pl-info">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
-            you’ll be added to a special Backer member list.</p>
-        <p class="pl-text2">Enter your pledge</p>
-        <div class="pl-value">
-          <p>$</p>
-          <input type="text" data-type="currency" placeholder="25" required>
-        </div>
-        <button class="continue pl-submit" type="submit">Continue</button>
-      </div>
+    <div id="sub-pl-bamboo" class="sub-modal-pledge">
+      <h3 class="pl-title">Bamboo Stand</h3>
+      <p class="pl-text1">Pledge $25 or more</p>
+      <p class="pl-stock"><strong>101</strong> left</p>
+      <span id="close-sub-pl-bamboo" class="pl-close">&times;</span>
+      <p class="pl-info">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p>
+      <p class="pl-text2">Enter your pledge</p>
+      <p class="pl-value"><input type="number" placeholder="25" min="25" required></p> 
+    <button class="continue pl-submit" type="submit">Continue</button>
     </div>
 
     <div class="pledge-container">

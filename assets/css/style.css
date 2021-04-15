@@ -534,31 +534,36 @@ input[type=number] {
 
 /*--FAO Mike: Kelv's additional modals - to be checked---*/
 
-.modal-any {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 5;
-    /* Sit on top */
-    overflow: auto;
-    /* Enable scroll if needed */
-    /* grid layout, sizing, colors to be added */
+.sub-modal-pledge {
+    background-color:beige;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index:5;
+    display:none;
+    grid-template-columns:250px 500px 250px;
+    grid-template-rows:100px 100px 100px;
+    grid-template-areas:
+    "pl-title pl-txt-1  pl-stock  pl-close"
+    ".  pl-info   pl-info   ."
+    "pl-text2  pl-value  pl-submit    ."
 }
 
-.pl-txt2 {
-grid-area: pl-text2;
+.pl-title {
+    grid-area: pl-title;
 }
 
-.pl-value {
-grid-area: pl-value;
+.pl-text1 {
+    grid-area: pl-txt-1;
 }
 
-.pl-submit {
-grid-area: pl-submit;
+.pl-stock {
+    grid-area: pl-stock;
 }
 
 .pl-close {
+    grid-area: pl-close;
     color: #aaaaaa;
     float: right;
     font-size: 28px;
@@ -571,6 +576,40 @@ grid-area: pl-submit;
     text-decoration: none;
     cursor: pointer;
 }
+
+.pl-info {
+    grid-area: pl-info;
+}
+
+.pl-text2 {
+    grid-area: pl-text2;
+}
+
+.pl-value{
+    grid-area: pl-value;
+    display:inline-block;
+    position:relative;
+}
+
+.pl-value:before{
+    position:absolute;
+    content:"$";
+    
+}
+
+.pl-value:before {
+    content:"$";
+}
+
+.pl-value input {
+    text-align: center;
+}
+
+.pl-submit {
+    grid-area: pl-submit;
+}
+
+
 
 /* ------------- [ MEDIA QUERIES - MOBILE ] ------------ */
 
