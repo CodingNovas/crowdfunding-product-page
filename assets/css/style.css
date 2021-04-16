@@ -550,10 +550,10 @@ input[type=number] {
     left:50%;
     transform: translate(-50%, -50%);
     background-color: var(--Offwhite);
-    width: 700px;
+    width: 760px;
     padding:10px 30px 30px 30px;
     height:auto;
-    border: solid 1px var(--Darkgray);
+    border: solid 1px lightgray;
     border-radius: 10px;
 }
 
@@ -578,23 +578,23 @@ input[type=number] {
 .sub-pl-content {
     border: solid 2px var(--cyan);
     border-radius:10px;
-    width:640px;
+    width:700px;
     height:auto;
     display:grid;
-    justify-items:start;
-    grid-template-columns:20px 150px 300px 150px 20px;
-    grid-template-rows:20px 60px 60px 100px;
+    justify-items:stretch;
+    grid-template-columns:5% 25% 25% 10% 5% 25% 5%;
+    grid-template-rows:20px 60px 60px 80px;
     grid-template-areas:
-    ".  .   .   .   ."
-    ". pl-title pl-txt-1  pl-stock ."
-    ". pl-info  pl-info   pl-info ."
-    "pl-pledge pl-pledge pl-pledge pl-pledge pl-pledge";
+    ". .         .         .         .         .         ."
+    ". pl-title  pl-txt-1  .         .         pl-stock  ."
+    ". pl-info   pl-info   pl-info   pl-info   pl-info   ."
+    "pl-pledge pl-pledge pl-pledge pl-pledge pl-pledge pl-pledge pl-pledge";
 }
 
 
 .pl-title {
     grid-area: pl-title;
-    
+    color:var(--Darkgray);
 }
 
 .pl-text1 {
@@ -612,61 +612,64 @@ input[type=number] {
 .pl-info {
     grid-area: pl-info;
     align-self:center;
-    
 }
 
 .pl-pledge {
-    grid-area: pl-pledge;
+    grid-area:pl-pledge;
     border-top: solid 1px var(--Darkgray);
-    width: 100%;
     display:grid;
-    align-items:center;
-    grid-template-columns:5% 50% 5% 10% 5% 20% 5%;
+    grid-template-columns: 5% 25% 25% 15% 5% 20% 5%;
+    grid-template-rows: 20px 40px 20px;
     grid-template-areas:
-    ". pl-text2 . pl-value . pl-submit .";
+    ".  .   .   .   .   .   ."
+    ".  pl-text2 . pl-value . pl-submit ."
+    ".  .   . . .   .   .";
 }
+
 
 .pl-text2 {
     grid-area: pl-text2;
 }
 
+
 .pl-value{
     grid-area: pl-value;
     display:inline-block;
     position:relative;
-    justify-self:left;
-    width:80%;
-    
+    width:100%;
+    height:100%;
+    align-items:center;
 }
+
 
 .pl-value:before{
     position:absolute;
     content:"$";
-    left:5px;
-    
+    top:50%;
+    transform: translateY(-50%);
+    left:5px;  
 }
 
 
-.pl-value input {
+.pl-input{
     text-align: center;
-    border: solid 1px var(--cyan);
-    border-radius: 15px;
+    width:100%;
     height:100%;
+    border: solid 1px var(--cyan);
+    border-radius: 35px;
 }
+
 
 .pl-submit {
     grid-area: pl-submit;
-    height: 60%;
-    width:80%;
+    width:100%;
+    justify-self:end;
     background-color: var(--cyan);
-    
-    border: none;
+    border: 1px solid;
     border-radius: 35px;
     color: white;
     font-weight: 700;
-    position: relative;
-    cursor: pointer;
-   
+    cursor: pointer;   
 }
 
 .pl-submit:hover,
