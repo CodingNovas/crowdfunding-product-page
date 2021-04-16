@@ -81,7 +81,8 @@ h3 {
 
 .active-bookmark {
     color: #292626;
-    filter: brightness(2.45) sepia(0.3) hue-rotate(126deg) saturate(4);
+    -webkit-filter: brightness(2.45) sepia(0.3) hue-rotate(126deg) saturate(4);
+            filter: brightness(2.45) sepia(0.3) hue-rotate(126deg) saturate(4);
 }
 
 /* -------------- [ header section / hero image ] ----------------- */
@@ -117,6 +118,8 @@ header {
 
 
 .navbar-nav {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     margin-top: 18px;
 }
@@ -308,7 +311,18 @@ section {
 }
 
 #modal.active {
-    animation: openModal 0.25s forwards ease-in-out;
+    -webkit-animation: openModal 0.25s forwards ease-in-out;
+            animation: openModal 0.25s forwards ease-in-out;
+}
+
+@-webkit-keyframes openModal {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 @keyframes openModal {
@@ -335,7 +349,18 @@ section {
 
 #overlay.active {
     pointer-events: all;
-    animation: overlay 0.25s forwards ease-in-out;
+    -webkit-animation: overlay 0.25s forwards ease-in-out;
+            animation: overlay 0.25s forwards ease-in-out;
+}
+
+@-webkit-keyframes overlay {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
 }
 
 @keyframes overlay {
@@ -410,7 +435,26 @@ section {
 }
 
 .pledge-card.open {
-    animation: open 0.25s forwards ease-in-out;
+    -webkit-animation: open 0.25s forwards ease-in-out;
+            animation: open 0.25s forwards ease-in-out;
+}
+
+@-webkit-keyframes open {
+    0% {
+        height: 140px;
+    }
+
+    0% {
+        border: 1px solid var(--Black);
+    }
+
+    100% {
+        height: 220px;
+    }
+
+    100% {
+        border: 2px solid var(--cyan);
+    }
 }
 
 @keyframes open {
@@ -527,6 +571,22 @@ input[type=number] {
     background-color: var(--cyan);
     border: 5px solid var(--Darkcyan);
     color: var(--Black);
+}
+
+.pledge-card .bid input::-webkit-input-placeholder {
+    text-align: center;
+}
+
+.pledge-card .bid input::-moz-placeholder {
+    text-align: center;
+}
+
+.pledge-card .bid input:-ms-input-placeholder {
+    text-align: center;
+}
+
+.pledge-card .bid input::-ms-input-placeholder {
+    text-align: center;
 }
 
 .pledge-card .bid input::placeholder {
@@ -744,6 +804,24 @@ input[type=number] {
         "bid bid    bid"; /* --- grid layout --- */
     }
 
+    @-webkit-keyframes open {
+        0% {
+            height: 180px;
+        }
+
+        0% {
+            border: 1px solid var(--Black);
+        }
+
+        100% {
+            height: 260px;
+        }
+
+        100% {
+            border: 2px solid var(--cyan);
+        }
+    }
+
     @keyframes open {
         0% {
             height: 180px;
@@ -786,6 +864,13 @@ input[type=number] {
 
     .pledge-card .quantity {
         margin-bottom: 0;
+    }
+
+    @-webkit-keyframes open {
+        0% {height: 240px;}
+        0% {border: 1px solid var(--Black);}
+        100% {height: 320px;}
+        100% {border: 2px solid var(--cyan);}
     }
 
     @keyframes open {
@@ -847,6 +932,8 @@ input[type=number] {
     }
 
     .border-progress {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
         border: none;
         padding: 0;
@@ -883,6 +970,24 @@ input[type=number] {
         height: 220px;
         grid-template-rows: 60px 80px 50px 80px;
         /* --- 4 rows --- */
+    }
+
+    @-webkit-keyframes open {
+        0% {
+            height: 220px;
+        }
+
+        0% {
+            border: 1px solid var(--Black);
+        }
+
+        100% {
+            height: 300px;
+        }
+
+        100% {
+            border: 2px solid var(--cyan);
+        }
     }
 
     @keyframes open {
