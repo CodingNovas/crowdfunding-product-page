@@ -520,6 +520,13 @@ input[type=number] {
 
 .pledge-card .bid .continue:hover {
     background-color: var(--Darkcyan);
+    color: var(--Offwhite);
+}
+
+.pledge-card .bid .continue:active {
+    background-color: var(--cyan);
+    border: 5px solid var(--Darkcyan);
+    color: var(--Black);
 }
 
 .pledge-card .bid input::placeholder {
