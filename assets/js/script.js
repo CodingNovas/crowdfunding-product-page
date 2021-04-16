@@ -232,49 +232,26 @@ window.onclick = function (event) {
     }
 }
 
-/* Below (calls class name) not working? Above (calls ID) works but then requires multiple instances  
 
-// Close modal
-var modalAny = document.getElementsByClassName("modal-any");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close-pledge");
+// Success modal
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modalAny.style.display = "none";
+var success = document.getElementById("success-container");
+var submit = document.getElementsByClassName("pay");
+
+submit.onclick = function () {
+    success.style.display = "grid";
 }
 
-*/
+var closeSuccess = document.getElementById("final-success");
 
-/*
-let anyPledge = document.getElementById("any-pledge");
-let bambooPledge = document.getElementById("bamboo-pledge");
-let blackEditionPledge = document.getElementById("black-edition-pledge");
-let anyBtn = document.getElementById("any-continue");
-let bambooBtn = document.getElementById("bamboo-continue");
-let blackEditionBtn = document.getElementById("black-edition-continue");
+closeSuccess.onclick = function () {
+    success.style.display = "none";
+}
 
-anyBtn.addEventListener("click", function() {
-    getUserPledge(anyPledge, 0);
-})
-
-bambooBtn.addEventListener("click", function() {
-    getUserPledge(bambooPledge, 25);
-})
-
-blackEditionBtn.addEventListener("click", function() {
-    getUserPledge(blackEditionPledge, 75);
-})
-
-
-function getUserPledge(pledgeAmount, minAmount) {
-    if (pledgeAmount.value >= minAmount) {
-        let userPledge = pledgeAmount.value;
-        incrementTotal(userPledge);
-    }
-    else {
-        alert ("Please enter a higher pledge");
+window.onclick = function (event) {
+    if (event.target == closeSuccess) {
+        success.style.display = "none";
     }
 }
-*/
+

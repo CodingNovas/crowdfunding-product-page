@@ -737,6 +737,47 @@ input[type=number] {
     background-color: var(--Darkcyan);
 }
 
+/*--success modal --*/
+
+#success-container {
+    display:none;
+    z-index:1050;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--Offwhite);
+    width: 500px;
+    height:auto;
+    padding:30px;
+    height:auto;
+    border: solid 1px lightgray;
+    border-radius: 10px;
+    justify-content:center;
+}
+
+#success-modal {
+   text-align:center; 
+}
+
+#success-modal h3 {
+    padding:20px 0 20px 0px; 
+}
+
+#success-modal h3 {
+    margin:20px 0 20px 0px; 
+}
+
+#final-success {
+    background-color: var(--Darkcyan);
+    padding:15px;
+    border: 1px solid;
+    border-radius: 35px;
+    width:100px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
 
 /* ------------- [ MEDIA QUERIES - MOBILE ] ------------ */
 

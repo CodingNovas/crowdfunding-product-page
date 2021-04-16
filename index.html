@@ -121,7 +121,7 @@
       <div class="pl-pledge">
         <p class="pl-text2">Enter your pledge</p>
         <p class="pl-value"><input class="pl-input" type="number" placeholder="25" min="25" required></p> 
-        <button class="pl-submit" type="submit">Continue</button>
+        <button class="pl-submit pay" type="submit">Continue</button>
       </div>
     </div>
   </div>  
@@ -136,7 +136,7 @@
       <div class="pl-pledge">
         <p class="pl-text2">Enter your pledge</p>
         <p class="pl-value"><input class="pl-input" type="number" placeholder="75" min="75" required></p> 
-        <button class="pl-submit" type="submit">Continue</button>
+        <button class="pl-submit pay" type="submit">Continue</button>
       </div>
     </div>
   </div>  
@@ -162,7 +162,7 @@
         <div class="bid">
           <label for="any-bid">Enter your pledge</label>
           <input type="number" class="input-bid" id="any-pledge" min="0" placeholder="$0" required>
-          <button class="continue" id="any-continue">Continue</button>
+          <button class="continue pay" id="any-continue">Continue</button>
         </div>
       </div>
       <div class="pledge-card">
@@ -179,7 +179,7 @@
         <div class="bid">
           <label for="bamboo-bid">Enter your pledge</label>
           <input type="number" class="input-bid" id="bamboo-pledge" min="25" placeholder="$25" required>
-          <button class="continue" id="bamboo-continue">Continue</button>
+          <button class="continue pay" id="bamboo-continue">Continue</button>
         </div>
       </div>
       <div class="pledge-card">
@@ -196,7 +196,7 @@
         <div class="bid">
           <label for="black-edition-bid">Enter your pledge</label>
           <input type="number" class="input-bid" id="black-edition-pledge" min="75" placeholder="$75" required>
-          <button class="continue" id="black-edition-continue">Continue</button>
+          <button class="continue pay" id="black-edition-continue">Continue</button>
         </div>
       </div>
       <div class="pledge-card unavailable">
@@ -217,12 +217,15 @@
   <!-- Selection Modal End -->
 
   <!-- Success modal start -->
-  <!--
-  Thanks for your support!
-  Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
-  an email once our campaign is completed.
-  Got it!
-  -->
+  <div id="success-container">
+    <div id="success-modal">
+      <img src="images/icon-check.svg" id="success-icon">   
+      <h3>Thanks for your support!</h3>
+      <p> Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.</p>
+      <button id="final-success">Got it!</button>
+    </div>
+  </div>
+
   <!-- Success modal end -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
