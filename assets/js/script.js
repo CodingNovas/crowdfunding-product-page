@@ -12,7 +12,6 @@ if (typeof (Storage) !== "undefined") {
         // check if NaN value 
         if (webAmount == "NaN")
         {
-            console.log("web amount is NaN")
             webAmount = 20;
         }
         document.getElementById("total-amount").innerHTML = webAmount;
@@ -50,20 +49,16 @@ for (let i = 0; i < pledge.length; i++) {
     document.getElementsByClassName("continue")[i].addEventListener("click", function () {
         //Fetch amount from imput 
         let amount = parseInt(document.getElementsByClassName("continue")[i].previousElementSibling.value);
-        console.log("amount = " + amount);
         //Fetch minium amount 
         let nodeEl = document.getElementsByClassName("continue")[i].previousElementSibling;
         let minAmount = parseInt(nodeEl.getAttributeNode("min").value);
-        console.log("min amount = " + minAmount);
         //Fetch default value if no amount is entered
         if (amount == "NaN")
         {
             amount = parseInt(minAmount);
-            console.log("amount is NaN so amount = " + amount);
         }
-        
+        //Check if value is above min & increment
         if (amount >= minAmount) {
-                console.log("total & backers should increment")
                 incrementTotal(amount);
                 incrementBackers();
         }
@@ -115,7 +110,6 @@ var x = setInterval(function () {
     //Calculate days
     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
     let contDown = days + "d";
-    console.log(days);
     //Calculate hours and seconds
     let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
