@@ -921,3 +921,43 @@ input[type=number] {
         padding-bottom: 25px;
     }
 }
+
+@media (max-width: 375px) {
+    .pledge-card {
+        height: calc(280px - 1vw);
+        row-gap: 20px;
+        grid-template-rows: 60px calc(120px - 1vw) 40px calc(100px - 1vw); /* --- 4 rows --- */
+        grid-template-columns: 5% 90% 5%; /* --- 3 columns --- */
+        grid-template-areas: 
+        ".   title    ."
+        ".   info     ."
+        ".   quantity ."
+        "bid bid    bid"; /* --- grid layout --- */
+    }
+
+    @-webkit-keyframes open {
+        0% {height: calc(280px - 1vw);}
+        0% {border: 1px solid var(--Black);}
+        100% {height: calc(390px - 1vw);}
+        100% {border: 2px solid var(--cyan);}
+    }
+
+    @keyframes open {
+        0% {height: calc(280px - 1vw);}
+        0% {border: 1px solid var(--Black);}
+        100% {height: calc(390px - 1vw);}
+        100% {border: 2px solid var(--cyan);}
+    }
+
+    .pledge-card .quantity {
+        padding-top: 20px;
+    }
+
+    .pledge-card .bid input {
+        align-self: center;
+    }
+
+    .pledge-card .bid .continue {
+        align-self: center;
+    }
+}
