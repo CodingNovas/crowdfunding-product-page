@@ -953,11 +953,18 @@ input[type=number] {
         padding-top: 20px;
     }
 
+    .pledge-card .bid label {
+        margin-top: 35px;
+    }
+
     .pledge-card .bid input {
         align-self: center;
+        margin-bottom: 2.5px;
     }
 
     .pledge-card .bid .continue {
         align-self: center;
+        margin-bottom: 2.5px;
+        font-size: 75%;
     }
 }
