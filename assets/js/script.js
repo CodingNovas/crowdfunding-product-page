@@ -48,24 +48,24 @@ let pledge = document.getElementsByClassName("continue");
 for (let i = 0; i < pledge.length; i++) {
     document.getElementsByClassName("continue")[i].addEventListener("click", function () {
         //Fetch amount from imput 
-        let amount = parseInt(document.getElementsByClassName("continue")[i].previousElementSibling.value);
+        let amount = parseInt(document.getElementsByClassName("input-bid")[i].value);
         //Fetch minium amount 
-        let nodeEl = document.getElementsByClassName("continue")[i].previousElementSibling;
+        let nodeEl = document.getElementsByClassName("input-bid")[i];
         let minAmount = parseInt(nodeEl.getAttributeNode("min").value);
         //Fetch default value if no amount is entered
-        if (amount == "NaN")
+        
+        if (Number.isNaN(amount))
         {
-            amount = parseInt(minAmount);
+            alert ("Please enter a pledge");
         }
-        //Check if value is above min & increment
-        if (amount >= minAmount) {
+        // Check if value is above min & increment
+        else if (amount >= minAmount) {
                 incrementTotal(amount);
                 incrementBackers();
         }
         else {
-                alert ("Please enter a higher pledge");
+            alert ("Please enter a higher pledge");
         }
-        
     })
 }
 
