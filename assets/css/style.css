@@ -300,14 +300,11 @@ section {
     height: auto;
     overflow: hidden;
     display: grid;
-    grid-template-rows: repeat(2, auto);
-    /* --- 2 rows --- */
-    grid-auto-columns: 100%;
-    /* --- 1 column --- */
+    grid-template-rows: repeat(2, auto); /* --- 2 rows --- */
+    grid-auto-columns: 100%; /* --- 1 column --- */
     grid-template-areas:
-        "header"
-        "body";
-    /* --- grid layout --- */
+    "header"
+    "body";  /* --- grid layout --- */
 }
 
 #modal.active {
@@ -316,23 +313,13 @@ section {
 }
 
 @-webkit-keyframes openModal {
-    0% {
-        transform: translate(-50%, -50%) scale(0);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
+    0% {transform: translate(-50%, -50%) scale(0);}
+    100% {transform: translate(-50%, -50%) scale(1);}
 }
 
 @keyframes openModal {
-    0% {
-        transform: translate(-50%, -50%) scale(0);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
+    0% {transform: translate(-50%, -50%) scale(0);}
+    100% {transform: translate(-50%, -50%) scale(1);}
 }
 
 #overlay {
@@ -354,23 +341,13 @@ section {
 }
 
 @-webkit-keyframes overlay {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0.5;
-    }
+    0% {opacity: 0;}
+    100% {opacity: 0.5;}
 }
 
 @keyframes overlay {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0.5;
-    }
+    0% {opacity: 0;}
+    100% {opacity: 0.5;}
 }
 
 .modal-header {
@@ -390,8 +367,7 @@ section {
 }
 
 .modal-header p {
-    grid-area: parag;
-    /* --- assigned area from parent grid layout --- */
+    grid-area: parag; /* --- assigned area from parent grid layout --- */
 }
 
 #close-modal {
@@ -411,13 +387,10 @@ section {
 }
 
 .modal-body {
-    grid-area: body;
-    /* --- assigned area from parent grid layout --- */
+    grid-area: body; /* --- assigned area from parent grid layout --- */
     display: grid;
-    grid-template-columns: 100%;
-    /* --- 1 column --- */
-    row-gap: 20px;
-    /* --- margin between rows (if rows is not set it's default is auto) --- */
+    grid-template-columns: 100%; /* --- 1 column --- */
+    row-gap: 20px; /* --- margin between rows (if rows is not set it's default is auto) --- */
 }
 
 .pledge-card {
@@ -440,45 +413,22 @@ section {
 }
 
 @-webkit-keyframes open {
-    0% {
-        height: 140px;
-    }
-
-    0% {
-        border: 1px solid var(--Black);
-    }
-
-    100% {
-        height: 220px;
-    }
-
-    100% {
-        border: 2px solid var(--cyan);
-    }
+    0% {height: 140px;}
+    0% {border: 1px solid var(--Black);}
+    100% {height: 220px;}
+    100% {border: 2px solid var(--cyan);}
 }
 
 @keyframes open {
-    0% {
-        height: 140px;
-    }
-
-    0% {
-        border: 1px solid var(--Black);
-    }
-
-    100% {
-        height: 220px;
-    }
-
-    100% {
-        border: 2px solid var(--cyan);
-    }
+    0% {height: 140px;}
+    0% {border: 1px solid var(--Black);}
+    100% {height: 220px;}
+    100% {border: 2px solid var(--cyan);}
 }
 
 .pledge-card .title {
     cursor: pointer;
-    grid-area: title;
-    /* --- assigned area from parent grid layout --- */
+    grid-area: title; /* --- assigned area from parent grid layout --- */
     display: grid;
     align-self: center;
     margin-top: 10px;
@@ -486,8 +436,7 @@ section {
 
 .pledge-card .quantity {
     cursor: pointer;
-    grid-area: quantity;
-    /* --- assigned area from parent grid layout --- */
+    grid-area: quantity; /* --- assigned area from parent grid layout --- */
     display: flex;
     align-self: center;
     margin-top: 10px;
@@ -509,28 +458,22 @@ section {
 }
 
 .pledge-card .bid {
-    grid-area: bid;
-    /* --- assigned area from parent grid layout --- */
+    grid-area: bid; /* --- assigned area from parent grid layout --- */
     border-top: 1px solid var(--Darkgray);
     display: grid;
-    grid-template-rows: 100px;
-    /* --- 1 row --- */
-    grid-template-columns: 5% 50% 20% 20% 5%;
-    /* --- 5 columns --- */
+    grid-template-rows: 100px; /* --- 1 row --- */
+    grid-template-columns: 5% 50% 20% 20% 5%; /* --- 5 columns --- */
     grid-template-areas:
-        ". label input button .";
-    /* --- grid layout --- */
+    ". label input button ."; /* --- grid layout --- */
 }
 
 .pledge-card .bid label {
-    grid-area: label;
-    /* --- assigned area from parent grid layout --- */
+    grid-area: label; /* --- assigned area from parent grid layout --- */
     margin-top: 27.5px;
 }
 
 .pledge-card .bid input {
-    grid-area: input;
-    /* --- assigned area from parent grid layout --- */
+    grid-area: input; /* --- assigned area from parent grid layout --- */
     border: none;
     height: 50%;
     width: 75%;
@@ -552,8 +495,7 @@ input[type=number] {
 
 .pledge-card .bid .continue {
     cursor: pointer;
-    grid-area: button;
-    /* --- assigned area from parent grid layout --- */
+    grid-area: button; /* --- assigned area from parent grid layout --- */
     border: none;
     height: 50%;
     margin-top: 12.5px;
@@ -634,7 +576,6 @@ input[type=number] {
     cursor: pointer;
 }
 
-
 .sub-pl-content {
     border: solid 2px var(--cyan);
     border-radius:10px;
@@ -651,7 +592,6 @@ input[type=number] {
     "pl-pledge pl-pledge pl-pledge pl-pledge pl-pledge pl-pledge pl-pledge";
 }
 
-
 .pl-title {
     grid-area: pl-title;
     color:var(--Darkgray);
@@ -667,7 +607,6 @@ input[type=number] {
     grid-area: pl-stock;
     justify-self:end;
 }
-
 
 .pl-info {
     grid-area: pl-info;
@@ -686,11 +625,9 @@ input[type=number] {
     ".  .   . . .   .   .";
 }
 
-
 .pl-text2 {
     grid-area: pl-text2;
 }
-
 
 .pl-value{
     grid-area: pl-value;
@@ -701,7 +638,6 @@ input[type=number] {
     align-items:center;
 }
 
-
 .pl-value:before{
     position:absolute;
     content:"$";
@@ -710,7 +646,6 @@ input[type=number] {
     left:5px;  
 }
 
-
 .pl-input{
     text-align: center;
     width:100%;
@@ -718,7 +653,6 @@ input[type=number] {
     border: solid 1px var(--cyan);
     border-radius: 35px;
 }
-
 
 .pl-submit {
     grid-area: pl-submit;
@@ -782,7 +716,6 @@ input[type=number] {
 /* ------------- [ MEDIA QUERIES - MOBILE ] ------------ */
 
 @media (max-width: 768px) {
-
     .hero-image {
         background: url('../../images/image-hero-mobile.jpg');
         height: 285px;
@@ -800,6 +733,7 @@ input[type=number] {
         padding-left: 15px;
         padding-right: 15px;
     }
+
     .navbar-nav{
         width: 95%;
         text-align: left;
@@ -809,6 +743,7 @@ input[type=number] {
         position: absolute;
         z-index: 2;
     }
+
     .navbar-dark .navbar-nav .nav-link {
         color: var(--Darkgray);
         padding: 25px 15px;
@@ -829,7 +764,7 @@ input[type=number] {
 
     .border-menu{
         border-top: 2px solid hsl(0deg 0% 48% / 50%);
-    border-bottom: 2px solid hsl(0deg 0% 48% / 50%);
+        border-bottom: 2px solid hsl(0deg 0% 48% / 50%);
     }
 
     section{
@@ -838,8 +773,8 @@ input[type=number] {
     }
     
     .pledge-card {
-        height: 180px;
-        grid-template-rows: 60px 60px 60px 80px; /* --- 4 rows --- */
+        height: calc(200px - 1vw);
+        grid-template-rows: 60px calc(80px - 1vw) 60px calc(80px - 1vw); /* --- 4 rows --- */
         grid-template-columns: 5% 90% 5%; /* --- 3 columns --- */
         grid-template-areas: 
         ".   title    ."
@@ -849,39 +784,17 @@ input[type=number] {
     }
 
     @-webkit-keyframes open {
-        0% {
-            height: 180px;
-        }
-
-        0% {
-            border: 1px solid var(--Black);
-        }
-
-        100% {
-            height: 260px;
-        }
-
-        100% {
-            border: 2px solid var(--cyan);
-        }
+        0% {height: calc(200px - 1vw);}
+        0% {border: 1px solid var(--Black);}
+        100% {height: calc(280px - 1vw);}
+        100% {border: 2px solid var(--cyan);}
     }
 
     @keyframes open {
-        0% {
-            height: 180px;
-        }
-
-        0% {
-            border: 1px solid var(--Black);
-        }
-
-        100% {
-            height: 260px;
-        }
-
-        100% {
-            border: 2px solid var(--cyan);
-        }
+        0% {height: calc(200px - 1vw);}
+        0% {border: 1px solid var(--Black);}
+        100% {height: calc(280px - 1vw);}
+        100% {border: 2px solid var(--cyan);}
     }
 
     .pledge-card .quantity {
@@ -890,14 +803,11 @@ input[type=number] {
     }
 }
 
-@media only screen and (max-width: 576px) {
-
-
-
+@media (max-width: 576px) {
     .pledge-card {
-        height: 240px;
+        height: calc(260px - 1vw);
         row-gap: 20px;
-        grid-template-rows: 60px 80px 40px 80px; /* --- 4 rows --- */
+        grid-template-rows: 60px calc(100px - 1vw) 40px calc(100px - 1vw); /* --- 4 rows --- */
         grid-template-columns: 5% 90% 5%; /* --- 3 columns --- */
         grid-template-areas: 
         ".   title    ."
@@ -911,16 +821,16 @@ input[type=number] {
     }
 
     @-webkit-keyframes open {
-        0% {height: 240px;}
+        0% {height: calc(260px - 1vw);}
         0% {border: 1px solid var(--Black);}
-        100% {height: 320px;}
+        100% {height: calc(340px - 1vw);}
         100% {border: 2px solid var(--cyan);}
     }
 
     @keyframes open {
-        0% {height: 240px;}
+        0% {height: calc(260px - 1vw);}
         0% {border: 1px solid var(--Black);}
-        100% {height: 320px;}
+        100% {height: calc(340px - 1vw);}
         100% {border: 2px solid var(--cyan);}
     }
 
@@ -931,11 +841,13 @@ input[type=number] {
     }
 
     .pledge-card .bid {
-        grid-template-columns: 5% 40% 25% 25% 5%;
-        /* --- 5 columns --- */
+        grid-template-columns: 5% 40% 25% 25% 5%; /* --- 5 columns --- */
         grid-template-areas:
-            ". label input button .";
-        /* --- grid layout --- */
+        ". label input button ."; /* --- grid layout --- */
+    }
+
+    .pledge-card .bid label {
+        font-size: smaller;
     }
 
     .pledge-card .bid input {
@@ -945,6 +857,7 @@ input[type=number] {
 
     .pledge-card .bid .continue {
         border-radius: 10px;
+        font-size: smaller;
     }
 
     section {
@@ -1008,61 +921,3 @@ input[type=number] {
         padding-bottom: 25px;
     }
 }
-
-@media (max-width: 455px) {
-    .pledge-card {
-        height: 220px;
-        grid-template-rows: 60px 80px 50px 80px;
-        /* --- 4 rows --- */
-    }
-
-    @-webkit-keyframes open {
-        0% {
-            height: 220px;
-        }
-
-        0% {
-            border: 1px solid var(--Black);
-        }
-
-        100% {
-            height: 300px;
-        }
-
-        100% {
-            border: 2px solid var(--cyan);
-        }
-    }
-
-    @keyframes open {
-        0% {
-            height: 220px;
-        }
-
-        0% {
-            border: 1px solid var(--Black);
-        }
-
-        100% {
-            height: 300px;
-        }
-
-        100% {
-            border: 2px solid var(--cyan);
-        }
-    }
-
-    .pledge-card .info {
-        text-align: justify;
-    }
-}
-
-/*
-@media(min-width: 900px){  
-    .hero-image{
-        background: url('../../images/image-hero-mobile.jpg');
-        }
-    .navbar-padding{
-        padding-left: 145px;
-    }
-    }*/
