@@ -45,10 +45,13 @@ document.getElementsByClassName("navbar-toggler")[0].addEventListener("click", f
 /*--------------- [increment total amounts & backer] -------------- */
 
 let pledge = document.getElementsByClassName("continue");
+let quantity = document.getElementsByClassName("q-value");
 for (let i = 0; i < pledge.length; i++) {
     document.getElementsByClassName("continue")[i].addEventListener("click", function () {
+        
         //Fetch amount from imput 
         let amount = parseInt(document.getElementsByClassName("input-bid")[i].value);
+        let amountLeft = parseInt(quantity[i-3].innerText);
         //Fetch minium amount 
         let nodeEl = document.getElementsByClassName("input-bid")[i];
         let minAmount = parseInt(nodeEl.getAttributeNode("min").value);
@@ -60,13 +63,24 @@ for (let i = 0; i < pledge.length; i++) {
         }
         // Check if value is above min & increment
         else if (amount >= minAmount) {
-                incrementTotal(amount);
-                incrementBackers();
+            incrementTotal(amount);
+            incrementBackers();
+            decreaseAmountLeft(amountLeft, i-3);
         }
         else {
             alert ("Please enter a higher pledge");
         }
     })
+}
+
+function decreaseAmountLeft(amountLeft, index) {
+    if (amountLeft > 0) {
+        amountLeft -= 1;
+        quantity[index].innerText = amountLeft.toString();
+    }
+    else {
+        alert ("Item no longer available");
+    } 
 }
 
 /*----------------- [update total money raised] ------------------*/
