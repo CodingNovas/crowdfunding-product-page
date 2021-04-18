@@ -1,5 +1,6 @@
 //localStorage.removeItem("totalAmount");
 //localStorage.removeItem("backers");
+//localStorage.removeItem("stockArray");
 
 /* ----------------------- [on load] ------------------------------*/
 
@@ -8,7 +9,6 @@ if (typeof (Storage) !== "undefined") {
     // Retrieve total amount
     if (localStorage.totalAmount) {
         let webAmount = parseInt(localStorage.getItem("totalAmount"));
-        console.log("webAmount = " + webAmount);
         // check if NaN value 
         if (webAmount == "NaN")
         {
@@ -25,7 +25,21 @@ if (typeof (Storage) !== "undefined") {
     } else {
         document.getElementById("backers").innerHTML = 5;
     }
-
+    //Retrieve stock left
+    if(localStorage.stockArray){
+        let stockArray = localStorage.getItem("stockArray").split(",");
+        let q0 = document.getElementsByClassName("q-value");
+        for (let i = 0; i < q0.length; i++) {
+            q0[i].innerText = stockArray[i];
+        }
+    }
+    else{
+        let stockArrayi = ['100', '63'];
+        let qi = document.getElementsByClassName("q-value");
+        for (let i = 0; i < qi.length; i++) {
+            qi[i].innerText = stockArrayi[i];
+        }
+    }
 } else {
     document.getElementById("total-amount").innerHTML = 0;
     document.getElementById("backers").innerHTML = 0;
@@ -46,6 +60,7 @@ document.getElementsByClassName("navbar-toggler")[0].addEventListener("click", f
 
 let pledge = document.getElementsByClassName("continue");
 let quantity = document.getElementsByClassName("q-value");
+
 for (let i = 0; i < pledge.length; i++) {
     document.getElementsByClassName("continue")[i].addEventListener("click", function () {
         
@@ -77,6 +92,10 @@ function decreaseAmountLeft(amountLeft, index) {
     if (amountLeft > 0) {
         amountLeft -= 1;
         quantity[index].innerText = amountLeft.toString();
+        //update value in webAPI 
+        stockWeb = localStorage.getItem("stockArray").split(",")
+        stockWeb[index] = amountLeft.toString();
+        localStorage.setItem("stockArray", stockWeb);
     }
     else {
         alert ("Item no longer available");
