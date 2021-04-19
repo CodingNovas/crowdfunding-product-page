@@ -35,6 +35,7 @@ if (typeof (Storage) !== "undefined") {
     }
     else{
         let stockArrayi = ['100', '63'];
+        localStorage.setItem("stockArray", stockArrayi);
         let qi = document.getElementsByClassName("q-value");
         for (let i = 0; i < qi.length; i++) {
             qi[i].innerText = stockArrayi[i];
