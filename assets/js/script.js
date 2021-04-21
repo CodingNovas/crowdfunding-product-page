@@ -82,6 +82,7 @@ for (let i = 0; i < pledge.length; i++) {
             incrementTotal(amount);
             incrementBackers();
             decreaseAmountLeft(amountLeft, i-3);
+            openSuccessModal();
         }
         else {
             alert ("Please enter a higher pledge");
@@ -134,6 +135,19 @@ document.getElementsByClassName("btn-bookmark")[0].addEventListener("click", fun
     /*https://redstapler.co/toggle-active-button-state-javascript/*/
     (this.classList.contains("active-bookmark")) ? this.classList.remove("active-bookmark"): this.classList.add("active-bookmark");
 });
+
+/*------------------- [success modal open/close] ------------------*/
+
+let successModal = document.getElementById("success-container");
+let exitSuccess = document.getElementById("final-success");
+
+function openSuccessModal() {
+    successModal.classList.add("active");
+}
+
+exitSuccess.addEventListener("click", function() {
+    successModal.classList.remove("active");
+}) 
 
 /*------------------------- [countdown] -----------------------------*/
 

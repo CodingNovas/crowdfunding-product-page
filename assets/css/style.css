@@ -675,12 +675,11 @@ input[type=number] {
 /*--success modal --*/
 
 #success-container {
-    display:none;
-    z-index:1050;
+    z-index:9999;
     position:fixed;
     top:50%;
     left:50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
     background-color: var(--Offwhite);
     width: 500px;
     height:auto;
@@ -689,6 +688,11 @@ input[type=number] {
     border: solid 1px lightgray;
     border-radius: 10px;
     justify-content:center;
+}
+
+#success-container.active {
+    -webkit-animation: openModal 0.25s forwards ease-in-out;
+            animation: openModal 0.25s forwards ease-in-out;
 }
 
 #success-modal {
