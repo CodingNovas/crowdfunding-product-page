@@ -146,7 +146,9 @@ function openSuccessModal() {
 }
 
 function closeSuccessModal() {
-    successModal.classList.remove("active");
+    if (successModal.classList.contains("active")) {
+        successModal.classList.remove("active");
+    }
 }
 
 exitSuccess.addEventListener("click", function() {
@@ -220,8 +222,12 @@ function openModal() {
 }
 
 function closeModal() {
-    modal.classList.remove("active");
-    overlay.classList.remove("active");
+    if (modal.classList.contains("active")) {
+        modal.classList.remove("active");
+    }
+    if (overlay.classList.contains("active")) {
+        overlay.classList.remove("active");
+    }
 }
 
 let pledgeCardsInfo = pledgeCardsData();
