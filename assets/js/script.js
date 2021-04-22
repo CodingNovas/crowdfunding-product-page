@@ -145,8 +145,14 @@ function openSuccessModal() {
     successModal.classList.add("active");
 }
 
-exitSuccess.addEventListener("click", function() {
+function closeSuccessModal() {
     successModal.classList.remove("active");
+}
+
+exitSuccess.addEventListener("click", function() {
+    closeSuccessModal();
+    closeModal();
+    location.reload();
 }) 
 
 /*------------------------- [countdown] -----------------------------*/
