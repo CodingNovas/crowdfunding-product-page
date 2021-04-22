@@ -217,8 +217,12 @@ function pledgeCardsData() {
 }
 
 function openModal() {
-    modal.classList.add("active");
-    overlay.classList.add("active");
+    if (!modal.classList.contains("active")) {
+        modal.classList.add("active");
+    }
+    if (!overlay.classList.contains("active")) {
+        overlay.classList.add("active");
+    }
 }
 
 function closeModal() {
