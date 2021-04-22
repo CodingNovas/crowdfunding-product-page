@@ -26,21 +26,18 @@ if (typeof (Storage) !== "undefined") {
         document.getElementById("backers").innerHTML = 5;
     }
     //Retrieve stock left
-    if(localStorage.stockArray){
-        let stockArray = localStorage.getItem("stockArray").split(",");
-        let q0 = document.getElementsByClassName("q-value");
-        for (let i = 0; i < q0.length; i++) {
-            q0[i].innerText = stockArray[i];
+    let col0 = document.querySelectorAll('[data-attr=bamboo]');
+    let col1 = document.querySelectorAll('[data-attr=black]');
+        for (let i0 = 0; i0 < col0.length; i0++)
+        {
+            col0[i0].innerHTML = (localStorage.bamboo) ? localStorage.getItem("bamboo") : 55;
         }
-    }
-    else{
-        let stockArrayi = ['100', '63'];
-        localStorage.setItem("stockArray", stockArrayi);
-        let qi = document.getElementsByClassName("q-value");
-        for (let i = 0; i < qi.length; i++) {
-            qi[i].innerText = stockArrayi[i];
+        for (let i1 = 0; i1 < col1.length; i1++)
+        {
+            col1[i1].innerHTML = (localStorage.black) ? localStorage.getItem("black") : 30;
         }
-    }
+    
+    
 } else {
     document.getElementById("total-amount").innerHTML = 0;
     document.getElementById("backers").innerHTML = 0;
@@ -62,26 +59,32 @@ document.getElementsByClassName("navbar-toggler")[0].addEventListener("click", f
 let pledge = document.getElementsByClassName("continue");
 let quantity = document.getElementsByClassName("q-value");
 
+
 for (let i = 0; i < pledge.length; i++) {
     document.getElementsByClassName("continue")[i].addEventListener("click", function () {
         
         //Fetch amount from imput 
         let amount = parseInt(document.getElementsByClassName("input-bid")[i].value);
-        let amountLeft = parseInt(quantity[i-3].innerText);
+        
+        //Recalculate index
+        istock = (i<3) ? i : i-1
+        let amountLeft = parseInt(quantity[istock].innerText);
+        
         //Fetch minium amount 
         let nodeEl = document.getElementsByClassName("input-bid")[i];
         let minAmount = parseInt(nodeEl.getAttributeNode("min").value);
+
         //Fetch default value if no amount is entered
-        
         if (Number.isNaN(amount))
         {
             alert ("Please enter a pledge");
         }
+
         // Check if value is above min & increment
         else if (amount >= minAmount) {
             incrementTotal(amount);
             incrementBackers();
-            decreaseAmountLeft(amountLeft, i-3);
+            decreaseAmountLeft(amountLeft, istock);
             openSuccessModal();
         }
         else {
@@ -91,13 +94,20 @@ for (let i = 0; i < pledge.length; i++) {
 }
 
 function decreaseAmountLeft(amountLeft, index) {
+    // Get data attribute for stock level
+    let stockItem = quantity[index].getAttribute('data-attr');
+    // Update stock info if stock is above 0
     if (amountLeft > 0) {
         amountLeft -= 1;
-        quantity[index].innerText = amountLeft.toString();
+        
+        //Update all relevant stock items
+        let col = document.querySelectorAll('[data-attr=' + stockItem + ']');
+        for (let i = 0; i < col.length; i++)
+        {
+            col[i].innerHTML = amountLeft;
+        }
         //update value in webAPI 
-        stockWeb = localStorage.getItem("stockArray").split(",")
-        stockWeb[index] = amountLeft.toString();
-        localStorage.setItem("stockArray", stockWeb);
+        localStorage.setItem(stockItem, amountLeft);
     }
     else {
         alert ("Item no longer available");
