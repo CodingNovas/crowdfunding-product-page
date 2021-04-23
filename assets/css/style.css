@@ -549,7 +549,7 @@ input[type=number] {
     transform: translate(-50%, -50%);
     background-color: var(--Offwhite);
     width: 90%;
-    max-width: 760px;
+    max-width: 750px;
     padding:10px 30px 30px 30px;
     height:auto;
     border: solid 1px lightgray;
