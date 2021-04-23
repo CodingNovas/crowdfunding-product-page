@@ -926,6 +926,12 @@ input[type=number] {
     .stock-info {
         padding-bottom: 25px;
     }
+
+    .pl-submit, .pl-input {
+        border-radius: 10px;
+        width: 110%;
+        font-size: 90%;
+    }
 }
 
 @media (max-width: 375px) {
