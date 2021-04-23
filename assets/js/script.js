@@ -1,6 +1,7 @@
 //localStorage.removeItem("totalAmount");
 //localStorage.removeItem("backers");
-//localStorage.removeItem("stockArray");
+//localStorage.removeItem("bamboo");
+//localStorage.removeItem("black");
 
 /* ----------------------- [on load] ------------------------------*/
 
@@ -10,8 +11,7 @@ if (typeof (Storage) !== "undefined") {
     if (localStorage.totalAmount) {
         let webAmount = parseInt(localStorage.getItem("totalAmount"));
         // check if NaN value 
-        if (webAmount == "NaN")
-        {
+        if (webAmount == "NaN") {
             webAmount = 20;
         }
         document.getElementById("total-amount").innerHTML = webAmount;
@@ -28,16 +28,26 @@ if (typeof (Storage) !== "undefined") {
     //Retrieve stock left
     let col0 = document.querySelectorAll('[data-attr=bamboo]');
     let col1 = document.querySelectorAll('[data-attr=black]');
-        for (let i0 = 0; i0 < col0.length; i0++)
-        {
-            col0[i0].innerHTML = (localStorage.bamboo) ? localStorage.getItem("bamboo") : 55;
+    for (let i0 = 0; i0 < col0.length; i0++) {
+        col0[i0].innerHTML = (localStorage.bamboo) ? localStorage.getItem("bamboo") : 3;
+        if (localStorage.bamboo == '0') {
+            let btn = document.querySelector('[data-btn=bamboo]');
+            document.querySelector('[data-pledge=bamboo]').classList.add('unavailable');
+            btn.disabled = true;
+            btn.innerHTML = "Out of Stock";
         }
-        for (let i1 = 0; i1 < col1.length; i1++)
-        {
-            col1[i1].innerHTML = (localStorage.black) ? localStorage.getItem("black") : 30;
+    }
+    for (let i1 = 0; i1 < col1.length; i1++) {
+        col1[i1].innerHTML = (localStorage.black) ? localStorage.getItem("black") : 2;
+        if (localStorage.black == '0') {
+            let btn1 = document.querySelector('[data-btn=black]');
+            btn1.disabled = true;
+            document.querySelector('[data-pledge=black]').classList.add('unavailable');
+            btn1.innerHTML = "Out of Stock";
         }
-    
-    
+    }
+
+
 } else {
     document.getElementById("total-amount").innerHTML = 0;
     document.getElementById("backers").innerHTML = 0;
@@ -51,7 +61,7 @@ root.style.setProperty('--Width', widthCalc + "%");
 
 /*--------------- [click toggle button ] ------------------- */
 document.getElementsByClassName("navbar-toggler")[0].addEventListener("click", function () {
-  (this.classList.contains("toggled")) ? this.classList.remove("toggled"): this.classList.add("toggled");
+    (this.classList.contains("toggled")) ? this.classList.remove("toggled"): this.classList.add("toggled");
 })
 
 /*--------------- [increment total amounts & backer] -------------- */
@@ -62,22 +72,21 @@ let quantity = document.getElementsByClassName("q-value");
 
 for (let i = 0; i < pledge.length; i++) {
     document.getElementsByClassName("continue")[i].addEventListener("click", function () {
-        
+
         //Fetch amount from imput 
         let amount = parseInt(document.getElementsByClassName("input-bid")[i].value);
-        
+
         //Recalculate index
-        istock = (i<3) ? i : i-1
+        istock = (i < 3) ? i : i - 1
         let amountLeft = parseInt(quantity[istock].innerText);
-        
+
         //Fetch minium amount 
         let nodeEl = document.getElementsByClassName("input-bid")[i];
         let minAmount = parseInt(nodeEl.getAttributeNode("min").value);
 
         //Fetch default value if no amount is entered
-        if (Number.isNaN(amount))
-        {
-            alert ("Please enter a pledge");
+        if (Number.isNaN(amount)) {
+            alert("Please enter a pledge");
         }
 
         // Check if value is above min & increment
@@ -86,9 +95,8 @@ for (let i = 0; i < pledge.length; i++) {
             incrementBackers();
             decreaseAmountLeft(amountLeft, istock);
             openSuccessModal();
-        }
-        else {
-            alert ("Please enter a higher pledge");
+        } else {
+            alert("Please enter a higher pledge");
         }
     })
 }
@@ -96,22 +104,27 @@ for (let i = 0; i < pledge.length; i++) {
 function decreaseAmountLeft(amountLeft, index) {
     // Get data attribute for stock level
     let stockItem = quantity[index].getAttribute('data-attr');
+    let col = document.querySelectorAll('[data-attr=' + stockItem + ']');
     // Update stock info if stock is above 0
     if (amountLeft > 0) {
         amountLeft -= 1;
-        
         //Update all relevant stock items
-        let col = document.querySelectorAll('[data-attr=' + stockItem + ']');
-        for (let i = 0; i < col.length; i++)
-        {
+        for (let i = 0; i < col.length; i++) {
             col[i].innerHTML = amountLeft;
         }
         //update value in webAPI 
         localStorage.setItem(stockItem, amountLeft);
+    } else if (amountLeft = 0) {
+        //Update all relevant stock items
+        for (let j = 0; j < col.length; j++) {
+            col[j].innerHTML = "0";
+        }
+        //update value in webAPI 
+        localStorage.setItem(stockItem, "0");
+        //==> page refresh and out of stock items dealt with in webAPI
+    } else {
+        alert("Item no longer available");
     }
-    else {
-        alert ("Item no longer available");
-    } 
 }
 
 /*----------------- [update total money raised] ------------------*/
@@ -161,11 +174,11 @@ function closeSuccessModal() {
     }
 }
 
-exitSuccess.addEventListener("click", function() {
+exitSuccess.addEventListener("click", function () {
     closeSuccessModal();
     closeModal();
     location.reload();
-}) 
+})
 
 /*------------------------- [countdown] -----------------------------*/
 
@@ -181,16 +194,13 @@ var x = setInterval(function () {
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
     //Fetch the right value according to distance left
-    if(days == "0")
-    { 
+    if (days == "0") {
         contDown = hours + "h";
     }
-    if ((days == "0") && (hours == "0"))
-    {
+    if ((days == "0") && (hours == "0")) {
         contDown = minutes + "m";
     }
-    if ((days == "0") && (hours == "0") && (minutes == "0"))
-    {
+    if ((days == "0") && (hours == "0") && (minutes == "0")) {
         contDown = seconds + "s";
     }
     //Upadate HTML    
@@ -201,8 +211,6 @@ var x = setInterval(function () {
         document.getElementById("countdown").innerHTML = "THANKS!!!";
     }
 }, 1000);
-
-
 
 /*----------------------- [ modals ] ---------------------------*/
 
@@ -328,4 +336,3 @@ window.onclick = function (event) {
         success.style.display = "none";
     }
 }
-
