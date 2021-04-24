@@ -583,12 +583,13 @@ input[type=number] {
     max-width: 700px;
     height:auto;
     display:grid;
+    place-self: center center;
     justify-items:stretch;
-    grid-template-columns:5% 25% 25% 10% 5% 25% 5%;
+    grid-template-columns:5% 25% 10% 25% 5% 25% 5%;
     grid-template-rows:20px auto auto auto;
     grid-template-areas:
     ". .         .         .         .         .         ."
-    ". pl-title  pl-txt-1  .         .         pl-stock  ."
+    ". pl-title  .    pl-txt-1       .         pl-stock  ."
     ". pl-info   pl-info   pl-info   pl-info   pl-info   ."
     "pl-pledge pl-pledge pl-pledge pl-pledge pl-pledge pl-pledge pl-pledge";
 }
@@ -618,7 +619,7 @@ input[type=number] {
     grid-area:pl-pledge;
     border-top: solid 1px var(--Darkgray);
     display:grid;
-    grid-template-columns: 5% 25% 25% 15% 5% 20% 5%;
+    grid-template-columns: 5% 25% 20% 20% 5% 20% 5%;
     grid-template-rows: 20px auto 20px;
     grid-template-areas:
     ".  .   .   .   .   .   ."
@@ -928,9 +929,9 @@ input[type=number] {
     }
 
     .pl-submit, .pl-input {
+        text-align: center;
         border-radius: 10px;
-        width: 110%;
-        font-size: 90%;
+        font-size: smaller;
     }
 }
 
