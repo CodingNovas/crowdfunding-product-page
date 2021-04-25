@@ -933,6 +933,11 @@ input[type=number] {
         border-radius: 10px;
         font-size: smaller;
     }
+
+    .sub-pl-content {
+        width: 110%;
+        font-size: smaller;
+    }
 }
 
 @media (max-width: 375px) {
