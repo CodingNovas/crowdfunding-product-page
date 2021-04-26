@@ -683,6 +683,7 @@ input[type=number] {
     transform: translate(-50%, -50%) scale(0);
     background-color: var(--Offwhite);
     width: 500px;
+    max-width: 100vw;
     height:auto;
     padding:30px;
     height:auto;
@@ -1002,4 +1003,5 @@ input[type=number] {
         margin-bottom: 2.5px;
         font-size: 75%;
     }
+
 }
