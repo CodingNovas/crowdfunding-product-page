@@ -86,7 +86,8 @@ for (let i = 0; i < pledge.length; i++) {
 
         //Fetch default value if no amount is entered
         if (Number.isNaN(amount)) {
-            alert("Please enter a pledge");
+            openNotificationModal("Please enter a pledge");
+            closeNotificationModal();
         }
 
         // Check if value is above min & increment
@@ -96,7 +97,8 @@ for (let i = 0; i < pledge.length; i++) {
             decreaseAmountLeft(amountLeft, istock);
             openSuccessModal();
         } else {
-            alert("Please enter a higher pledge");
+            openNotificationModal("Please enter a higher pledge");
+            closeNotificationModal();
         }
     })
 }
@@ -123,7 +125,8 @@ function decreaseAmountLeft(amountLeft, index) {
         localStorage.setItem(stockItem, "0");
         //==> page refresh and out of stock items dealt with in webAPI
     } else {
-        alert("Item no longer available");
+        openNotificationModal("Item no longer available");
+        closeNotificationModal();
     }
 }
 
@@ -162,6 +165,8 @@ document.getElementsByClassName("btn-bookmark")[0].addEventListener("click", fun
 /*------------------- [success modal open/close] ------------------*/
 
 let successModal = document.getElementById("success-container");
+let notificationModal = document.getElementById("notification-container");
+let innerNotification = document.getElementById("notification-modal");
 let exitSuccess = document.getElementById("final-success");
 
 function openSuccessModal() {
@@ -172,6 +177,19 @@ function closeSuccessModal() {
     if (successModal.classList.contains("active")) {
         successModal.classList.remove("active");
     }
+}
+
+function openNotificationModal(notification) {
+    notificationModal.classList.add("active");
+    innerNotification.innerText = notification;
+}
+
+function closeNotificationModal() {
+    setTimeout(function() {
+        if (notificationModal.classList.contains("active")) {
+            notificationModal.classList.remove("active");
+        }
+    }, 1000);
 }
 
 exitSuccess.addEventListener("click", function () {

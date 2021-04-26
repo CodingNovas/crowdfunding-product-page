@@ -675,7 +675,7 @@ input[type=number] {
 
 /*--success modal --*/
 
-#success-container {
+#success-container, #notification-container {
     z-index:9999;
     position:fixed;
     top:50%;
@@ -691,13 +691,30 @@ input[type=number] {
     justify-content:center;
 }
 
+#notification-container {
+    display: grid;
+    height: 240px;
+}
+
 #success-container.active {
+    -webkit-animation: openModal 0.25s forwards ease-in-out;
+            animation: openModal 0.25s forwards ease-in-out;
+}
+
+#notification-container.active {
     -webkit-animation: openModal 0.25s forwards ease-in-out;
             animation: openModal 0.25s forwards ease-in-out;
 }
 
 #success-modal {
    text-align:center; 
+}
+
+#notification-modal {
+    display: grid;
+    place-self: center center;
+    font-size: 120%;
+    color: var(--cyan);
 }
 
 #success-modal h3 {
