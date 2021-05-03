@@ -189,7 +189,7 @@ function closeNotificationModal() {
         if (notificationModal.classList.contains("active")) {
             notificationModal.classList.remove("active");
         }
-    }, 1000);
+    }, 2000);
 }
 
 exitSuccess.addEventListener("click", function () {

@@ -694,7 +694,7 @@ input[type=number] {
 
 #notification-container {
     display: grid;
-    height: 240px;
+    height: 200px;
 }
 
 #success-container.active {
@@ -714,8 +714,8 @@ input[type=number] {
 #notification-modal {
     display: grid;
     place-self: center center;
-    font-size: 120%;
-    color: var(--cyan);
+    font-size: 150%;
+    color: var(--Black);
 }
 
 #success-modal h3 {
