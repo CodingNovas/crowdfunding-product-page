@@ -77,6 +77,7 @@ h3 {
 
 .btn:disabled{
     background-color: var(--Darkgray);
+    opacity: 1;
 }
 .btn-bookmark {
     color: var(--Darkgray);
@@ -177,8 +178,12 @@ section {
 
 .visual-absolute {
     position: absolute;
+    display: flex;
+    width:100%;
     top: -30px;
-    left: calc(50% - 30px);
+    left: 0;
+    align-content: center;
+    justify-content: center;
 }
 
 .project-intro h1,

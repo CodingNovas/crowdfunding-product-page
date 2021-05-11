@@ -29,7 +29,7 @@ if (typeof (Storage) !== "undefined") {
     let col0 = document.querySelectorAll('[data-attr=bamboo]');
     let col1 = document.querySelectorAll('[data-attr=black]');
     for (let i0 = 0; i0 < col0.length; i0++) {
-        col0[i0].innerHTML = (localStorage.bamboo) ? localStorage.getItem("bamboo") : 3;
+        col0[i0].innerHTML = (localStorage.bamboo) ? localStorage.getItem("bamboo") : 101;
         if (localStorage.bamboo == '0') {
             let btn = document.querySelector('[data-btn=bamboo]');
             document.querySelector('[data-pledge=bamboo]').classList.add('unavailable');
@@ -38,10 +38,11 @@ if (typeof (Storage) !== "undefined") {
         }
     }
     for (let i1 = 0; i1 < col1.length; i1++) {
-        col1[i1].innerHTML = (localStorage.black) ? localStorage.getItem("black") : 2;
+        col1[i1].innerHTML = (localStorage.black) ? localStorage.getItem("black") : 3;
         if (localStorage.black == '0') {
             let btn1 = document.querySelector('[data-btn=black]');
             btn1.disabled = true;
+            //document.querySelector('')
             document.querySelector('[data-pledge=black]').classList.add('unavailable');
             btn1.innerHTML = "Out of Stock";
         }
