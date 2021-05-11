@@ -38,7 +38,7 @@ if (typeof (Storage) !== "undefined") {
         }
     }
     for (let i1 = 0; i1 < col1.length; i1++) {
-        col1[i1].innerHTML = (localStorage.black) ? localStorage.getItem("black") : 3;
+        col1[i1].innerHTML = (localStorage.black) ? localStorage.getItem("black") : 64;
         if (localStorage.black == '0') {
             let btn1 = document.querySelector('[data-btn=black]');
             btn1.disabled = true;
